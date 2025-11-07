@@ -11,6 +11,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      font-size: 10px; /* Giảm từ 16px → 15px */
+    }
+
     body {
       margin: 0;
       font-family: var(--font-main);
@@ -228,18 +232,24 @@
       border-radius: 5px;
     }
 
+    .main-navigation {
+  margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
+
+}
+
     .main-navigation ul {
       display: flex;
       gap: 22px;
-      align-items: center;
+      align-items: right;
       flex-wrap: wrap;
     }
 
     .main-navigation a {
       color: var(--color-white);
-      font-weight: 500;
+      /* font-weight: 500; */
       font-size: 18px;
       transition: opacity 0.2s;
+     
     }
 
     .main-navigation a:hover {
@@ -298,6 +308,7 @@
       gap: 24px;
       flex-wrap: wrap;
       width: 100%;
+      
     }
 
     .training-card {
@@ -312,6 +323,8 @@
       flex: 1;
       min-width: 250px;
       max-width: 282px;
+
+
       transition: transform 0.3s;
     }
 
@@ -320,7 +333,7 @@
     }
 
     .card-icon {
-      height: 80px;
+      height: 50px;
       object-fit: contain;
       filter: brightness(0) invert(1);
     }
@@ -344,7 +357,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 90%;
       height: 39px;
       background-image: url('/assets/b9cd6903150b3d3bff84a259ef2c7adbb2d13b65.png');
       background-repeat: repeat-x;
@@ -352,7 +365,7 @@
       background-size: auto 100%;
     }
 
-    .footer-container {
+    /* .footer-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -366,8 +379,42 @@
       align-items: center;
       gap: 16px;
       flex-grow: 1;
+      text-align: center;
+      margin-left: auto;
+        } */
+
+    /* === CĂN GIỮA TUYỆT ĐỐI .footer-main-content === */
+.footer-center-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  z-index: 3;
+}
+
+/* Đảm bảo .footer-container có position */
+.footer-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  min-height: 180px; /* Đủ cao để căn giữa */
+  padding: 20px;
+}
+
+/* XÓA margin-left: auto trong .footer-main-content */
+.footer-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+  text-align: left;
   
-    }
+}
+
 
     .copyright-text {
       color: var(--color-white);
@@ -409,6 +456,7 @@
       align-items: center;
       gap: 16px;
       text-align: center;
+      right: 0;
     }
 
     .digital-move-logo {
@@ -431,23 +479,20 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px; /* Đủ để chứa ảnh 38.92px + margin nếu cần */
+  height: 35px; /* giảm chiều cao tổng thể */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
-  padding: 10px 0;
-  background-color: var(--color-secondary); /* Nền xanh đậm */
-  z-index: 1;
-  overflow: hidden;
+  background-color: var(--color-secondary);
+  /* overflow: hidden; */
 }
-
+/* 
 .thocam-img {
   width: 200px;
   height: 27px;
   object-fit: contain;
   flex-shrink: 0;
-}
+} */
 
 /* Đẩy nội dung footer xuống dưới dãy thổ cẩm */
 .site-footer-section {
@@ -456,6 +501,46 @@
   background-color: var(--color-secondary);
   z-index: 0;
 }
+
+/* === CỐ ĐỊNH PHẦN DIGITAL MOVE Ở GÓC PHẢI FOOTER === */
+.footer-aside-content {
+  position: absolute !important;
+  right: 20px !important;
+  top: 60% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+  margin: 0 !important;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  width: fit-content;
+}
+
+/* Đảm bảo .footer-container có không gian cho absolute */
+.footer-decorative-strip {
+  position: absolute;
+  top: 0;  left: 0;
+  width: 100%;
+  height: 42px; /* đủ để chứa toàn bộ viền trắng của ảnh */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  z-index: 1;
+  overflow: hidden; /* giữ lại để không bị tràn ngoài */
+  padding: 0; /* loại bỏ padding để ảnh chạm sát mép */
+}
+
+.footer-decorative-strip img {
+  height: 38px; /* vừa nhỏ hơn container một chút để không bị cắt */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 
 .footer-container {
   position: relative;
