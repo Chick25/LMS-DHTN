@@ -1,173 +1,113 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tay Nguyen University - E-Learning Portal</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tay Nguyen University E-Learning Platform">
+  <meta name="keywords" content="e-learning, Tay Nguyen University, online courses, education">
+  <meta name="author" content="Tay Nguyen University">
+  <title>Tay Nguyen University E-Learning</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header" id="header">
       <div class="header-top">
-        <div class="logo-section">
-          <div class="logo-circle">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uP43fa6dLxwsNcxVhchi6CqXPMSmCp.png"
-              alt="Tay Nguyen University Logo"
-            />
+        <div class="container header-top-inner">
+          <a href="#" class="logo-container">
+            <img src="assests/logotaynguyen.webp" alt="Trường Đại học Tây Nguyên" class="logo-img">
+            <img src="assests/logo2.jpg" alt="Thương hiệu nhận diện" class="bo_nhan_dien-img">
+          </a>
+          <h1 class="site-title">E - LEARNING</h1>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="container header-bottom-inner">
+          <div class="header-actions">
+            <button class="lang-selector">Vi</button>
+            <a href="#" class="login-button">Đăng Nhập</a>
           </div>
-          <div class="logo-text">
-            <h1>TRƯỜNG ĐẠI HỌC TÂY NGUYÊN</h1>
-            <p>Tay Nguyen University</p>
+          <nav class="main-navigation">
+            <ul>
+              <li><a href="#">TRANG CHỦ</a></li>
+              <li><a href="#">GIỚI THIỆU</a></li>
+              <li><a href="#">ĐÀO TẠO</a></li>
+              <li><a href="#">KHÓA HỌC</a></li>
+              <li><a href="#">TIN TỨC</a></li>
+              <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+          </nav>
+          <div class="social-links">
+            <a href="#"><img src="assests/icons/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assests/icons/x.png" alt="Twitter"></a>
+            <a href="#"><img src="assests/icons/linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="assests/icons/insta.png" alt="YouTube"></a>
           </div>
         </div>
-
-        <nav>
-          <a href="#">HOME</a>
-          <a href="#">ABOUT</a>
-          <a href="#">ACADEMICS</a>
-          <a href="#">COURSES</a>
-          <a href="#">NEWS</a>
-          <a href="#">CONTACT</a>
-          <select class="language-select">
-            <option>EN</option>
-            <option>VI</option>
-          </select>
-          <button class="sign-in-btn">SIGN IN</button>
-        </nav>
-      </div>
-
-      <div class="social-bar">
-        <a href="#" title="Facebook">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3.7 12.5h-2.1v7.5h-3v-7.5h-1.5v-2.6h1.5v-1.7c0-1.3.3-3.3 3.3-3.3h2.6v2.26h-1.9c-.3 0-.5.2-.5.5v1.74h2.4l-.5 2.6z"
-            />
-          </svg>
-        </a>
-        <a href="#" title="Twitter">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7z"
-            />
-          </svg>
-        </a>
-        <a href="#" title="LinkedIn">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-            />
-          </svg>
-        </a>
-        <a href="#" title="YouTube">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75-9.75-4.365-9.75-9.75 4.365-9.75 9.75-9.75zm3.248 7.498c.536 0 .972-.436.972-.972s-.436-.972-.972-.972-.972.436-.972.972.436.972.972.972zm-5.497 1.772c1.266.633 3.248 1.138 4.249 1.138 1.001 0 2.983-.505 4.249-1.138m-4.249 5.641c2.318 0 4.197-1.879 4.197-4.197s-1.879-4.197-4.197-4.197-4.197 1.879-4.197 4.197 1.879 4.197 4.197 4.197z"
-            />
-          </svg>
-        </a>
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero-content">
-        <h2>TAY NGUYEN UNIVERSITY</h2>
-        <p>E-LEARNING PORTAL</p>
-      </div>
+    <!-- HERO BACKGROUND (dưới navigation) -->
+    <div class="hero-background">
+      <img src="assests/Background.png" alt="background" class="hero-background">
     </div>
 
-    <!-- Training Program Button -->
-    <div class="training-button-section">
-      <button>TRAINING PROGRAM</button>
-    </div>
-
-    <!-- Training Cards -->
-    <div class="training-cards">
-      <div class="cards-container">
-        <!-- Student Training Card -->
-        <div class="training-card">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-            <path
-              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-            ></path>
-          </svg>
-          <h3>Student Training</h3>
-        </div>
-
-        <!-- Teacher Training Card -->
-        <div class="training-card">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <h3>Teacher Training</h3>
-        </div>
-
-        <!-- Staff Training Card -->
-        <div class="training-card">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <h3>Staff Training</h3>
-        </div>
-
-        <!-- Public Training Card -->
-        <div class="training-card">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path
-              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-            ></path>
-          </svg>
-          <h3>Public Training</h3>
+    <!-- TRAINING SECTION (chồng lên 1 phần background) -->
+    <section id="training" class="training-section">
+      <div class="container">
+        <a href="#" class="training-cta">CHƯƠNG TRÌNH ĐÀO TẠO</a>
+        <div class="card-container">
+          <div class="training-card">
+            <img src="assests/icons/gra.png" alt="Sinh Viên" class="card-icon">
+            <h3 class="card-title">Sinh Viên</h3>
+          </div>
+          <div class="training-card">
+            <img src="assests/icons/teaching.png" alt="Học Viên" class="card-icon">
+            <h3 class="card-title">Học Viên</h3>
+          </div>
+          <div class="training-card">
+            <img src="assests/icons/canboo.png" alt="Cán Bộ" class="card-icon">
+            <h3 class="card-title">Cán Bộ</h3>
+          </div>
+          <div class="training-card">
+            <img src="/assets/a1ac5ce924adbd56d297ac1d8b915f681ae834a6.png" alt="MOOCs" class="card-icon">
+            <h3 class="card-title">MOOCs</h3>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <div class="footer-copyright">
-          <p>Copyrights © 2025 Tay Nguyen University</p>
+    <!-- FOOTER -->
+    <footer id="footer" class="site-footer-section">
+      <div class="footer-decorative-strip">
+        <img src="assests/thocam.png" alt="thocam1">
+        <img src="assests/thocam.png" alt="thocam2">
+        <img src="assests/thocam.png" alt="thocam3">
+      </div>
+      <div class="container footer-container">
+        <div class="footer-main-content">
+          <p class="copyright-text">Copyrights © 2025 Tay Nguyen University</p>
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li class="separator">|</li>
+              <li><a href="#">Terms of Use</a></li>
+              <li class="separator">|</li>
+              <li><a href="#">Copyright Procedures</a></li>
+              <li class="separator">|</li>
+              <li class="id-text">ID 123</li>
+            </ul>
+          </nav>
         </div>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <span>|</span>
-          <a href="#">Terms of Use</a>
-          <span>|</span>
-          <a href="#">Copyright Procedures</a>
-          <span>|</span>
-          <span>ID 123</span>
+        <div class="footer-aside-content">
+          <img src="assests/digital.png" alt="Digital Move Project Logo" class="digital-move-logo">
+          <p class="digital-move-text">This LMS was enhanced through the Digital Move Project</p>
         </div>
-        <div class="footer-badge">QA</div>
       </div>
     </footer>
-  </body>
+  </div>
+</body>
 </html>

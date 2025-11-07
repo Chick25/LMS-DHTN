@@ -1,308 +1,521 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+:root {
+      --color-primary: #0f63ac;
+      --color-secondary: #09365d;
+      --color-white: #ffffff;
+      --color-text-light: #ffffff;
+      --color-text-dark: #444444;
+      --font-main: 'Inter', sans-serif;
+    }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ffffff;
-  color: #333;
-}
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-/* Header Styles */
-header {
-  background: linear-gradient(to right, #005ea0, #0073b2);
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background-color: var(--color-text-dark);
+    }
 
-.header-top {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-wrapper {
+      max-width: 1920px;
+      margin: 0 auto;
+      background-color: var(--color-white);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1860px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* === HERO BACKGROUND SECTION === */
+    .hero-background {
+      width: 100%;
+      height: 601px;
+      background-image: url('/assets/hero-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* Overlay để làm nổi đẹp hơn nếu cần */
+    .hero-background::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, rgba(15, 99, 172, 0.1), rgba(0, 94, 160, 0.4));
+      z-index: 1;
+    }
+
+    /* === HEADER (giữ nguyên trên background) === */
+    /*test*/
+    /* Căn giữa E-LEARNING */
+.header-top-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.logo-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo-circle {
-  width: 64px;
-  height: 64px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px;
-  flex-shrink: 0;
-}
-
-.logo-circle img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: contain;
-}
-
-.logo-text h1 {
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-
-.logo-text p {
-  font-size: 0.875rem;
-  color: #b3d9ff;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #b3d9ff;
-}
-
-.language-select {
-  background-color: #005ea0;
-  color: white;
-  border: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.5rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.sign-in-btn {
-  background-color: #003f6b;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.sign-in-btn:hover {
-  background-color: #00325f;
-}
-
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-}
-
-/* Social Icons Bar */
-.social-bar {
-  background-color: rgba(0, 64, 128, 0.9);
-  padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-.social-bar a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  fill: white;
-  transition: opacity 0.3s;
-}
-
-.social-bar a:hover {
-  opacity: 0.8;
-}
-
-/* Hero Section */
-.hero {
+  gap: 20px;
   position: relative;
-  height: 400px;
-  width: 100%;
-  overflow: hidden;
-  background: linear-gradient(
-      to right,
-      rgba(0, 94, 160, 0.7),
-      rgba(0, 115, 178, 0.7)
-    ),
-    url("https://images.unsplash.com/photo-1427504494785-cdccfb5c2f7e?w=1200&h=500&fit=crop")
-      center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.hero-content {
-  text-align: center;
-  color: white;
+.site-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #0f5eac;
+  font-weight: 700;
+  font-size: 64px;
+  letter-spacing: 6.4px;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
   z-index: 2;
 }
 
-.hero-content h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
-.hero-content p {
-  font-size: 1.5rem;
+/* Responsive: Mobile & Tablet */
+@media (max-width: 1200px) {
+  .site-title {
+    position: static;
+    transform: none;
+    order: -1;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .header-top-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-container,
+  .header-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-right {
+    order: 1;
+    margin-top: 8px;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    height: 300px;
+  .site-title {
+    font-size: 32px;
+    letter-spacing: 3.2px;
   }
-  .hero-content h2 {
-    font-size: 1.75rem;
+
+  .logo-img {
+    height: 60px;
   }
-  .hero-content p {
-    font-size: 1rem;
+
+  .header-right {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .social-links {
+    order: 2;
   }
 }
+    .site-header {
+      background-color: var(--color-primary);
+      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 10;
+    }
 
-/* Training Program Button Section */
-.training-button-section {
-  background: linear-gradient(to right, #005ea0, #0073b2);
-  padding: 3rem 1rem;
+    .header-top {
+      background-color: var(--color-white);
+      padding: 16px 0;
+    }
+
+    .header-top-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .logo-container img{
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+  /* logo */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .site-title {
+      color: #0f5eac;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: 6.4px;
+      margin: 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .header-bottom {
+      padding: 8px 0;
+    }
+
+    .header-bottom-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .lang-selector, .login-button {
+      border: 1px solid var(--color-white);
+      border-radius: 4px;
+      background-color: transparent;
+      color: var(--color-white);
+      font-family: var(--font-main);
+      font-weight: 500;
+      font-size: 18px;
+      padding: 5px 14px;
+      cursor: pointer;
+    }
+
+    .login-button {
+      padding: 5px 20px;
+      border-radius: 5px;
+    }
+
+    .main-navigation ul {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .main-navigation a {
+      color: var(--color-white);
+      font-weight: 500;
+      font-size: 18px;
+      transition: opacity 0.2s;
+    }
+
+    .main-navigation a:hover {
+      opacity: 0.8;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .social-links img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* === TRAINING SECTION === */
+    .training-section {
+      background: linear-gradient(90deg, #005ea0 0%, #0073b2 100%);
+      padding: 80px 0;
+      margin-top: -100px; /* Kéo lên để chồng lên background */
+      position: relative;
+      z-index: 5;
+    }
+
+    .training-section .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .training-cta {
+      background-color: #0b63af;
+      border: 2px solid var(--color-white);
+      border-radius: 10px;
+      padding: 14px 34px;
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 3.84px;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .training-cta:hover {
+      background-color: #094f Wyn;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .training-card {
+      background: linear-gradient(180deg, rgba(0, 94, 160, 0.2) 0%, rgba(0, 115, 178, 0.2) 100%);
+      border-radius: 8px;
+      padding: 48px 24px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+      flex: 1;
+      min-width: 250px;
+      max-width: 282px;
+      transition: transform 0.3s;
+    }
+
+    .training-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-icon {
+      height: 80px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .card-title {
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 28px;
+      margin: 0;
+    }
+
+    /* === FOOTER === */
+    .site-footer-section {
+      background-color: var(--color-secondary);
+      padding: 80px 0 40px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .footer-decorative-strip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 39px;
+      background-image: url('/assets/b9cd6903150b3d3bff84a259ef2c7adbb2d13b65.png');
+      background-repeat: repeat-x;
+      background-position: center;
+      background-size: auto 100%;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      flex-grow: 1;
+  
+    }
+
+    .copyright-text {
+      color: var(--color-white);
+      opacity: 0.6;
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .footer-nav ul {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-nav li {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .footer-nav a {
+      color: var(--color-white);
+      transition: opacity 0.2s;
+    }
+
+    .footer-nav a:hover {
+      opacity: 0.8;
+    }
+
+    .footer-nav .separator, .footer-nav .id-text {
+      color: #666666;
+    }
+
+    .footer-aside-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .digital-move-logo {
+      width: 72px;
+      height: 71px;
+    }
+
+    .digital-move-text {
+      color: var(--color-white);
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 1.2;
+      max-width: 261px;
+      margin: 0;
+    }
+/* test */
+    /* === DÃY 3 HÌNH THỔ CẨM – TRÊN ĐẦU FOOTER === */
+.footer-decorative-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Đủ để chứa ảnh 38.92px + margin nếu cần */
   display: flex;
   justify-content: center;
-}
-
-.training-button-section button {
-  border: 2px solid white;
-  color: white;
-  background-color: transparent;
-  padding: 0.75rem 2rem;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.training-button-section button:hover {
-  background-color: white;
-  color: #005ea0;
-}
-
-/* Training Cards Section */
-.training-cards {
-  background: linear-gradient(to right, #005ea0, #0073b2);
-  padding: 4rem 1rem;
-}
-
-.cards-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-.training-card {
-  background-color: #004080;
-  color: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  gap: 0;
+  padding: 10px 0;
+  background-color: var(--color-secondary); /* Nền xanh đậm */
+  z-index: 1;
+  overflow: hidden;
 }
 
-.training-card:hover {
-  background-color: white;
-  color: #005ea0;
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.thocam-img {
+  width: 200px;
+  height: 27px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.training-card svg {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 1rem;
+/* Đẩy nội dung footer xuống dưới dãy thổ cẩm */
+.site-footer-section {
+  position: relative;
+  padding-top: 100px; /* Đẩy nội dung xuống dưới dãy thổ cẩm */
+  background-color: var(--color-secondary);
+  z-index: 0;
 }
 
-.training-card h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
+.footer-container {
+  position: relative;
+  z-index: 2;
 }
+    /* === RESPONSIVE === */
+    @media (max-width: 1400px) {
+      .site-title {
+        font-size: 48px;
+      }
+    }
 
-/* Footer */
-footer {
-  background-color: #003f6b;
-  color: white;
-  padding: 2rem 1rem;
-}
+    @media (max-width: 1200px) {
+      .header-top-inner, .header-bottom-inner {
+        justify-content: center;
+      }
+      .main-navigation {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin-top: 16px;
+      }
+      .main-navigation ul {
+        justify-content: center;
+      }
+      .hero-background {
+        height: 500px;
+      }
+    }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
+    @media (max-width: 768px) {
+      .site-title {
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
+      }
+      .logo-img {
+        height: 60px;
+      }
+      .header-actions, .social-links {
+        justify-content: center;
+        width: 100%;
+        margin-top: 12px;
+      }
+      .training-cta {
+        font-size: 24px;
+        padding: 12px 24px;
+      }
+      .hero-background {
+        height: 400px;
+      }
+    }
 
-.footer-copyright {
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  font-size: 0.875rem;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: #b3d9ff;
-}
-
-.footer-links span {
-  color: #666;
-}
-
-.footer-badge {
-  width: 32px;
-  height: 32px;
-  background-color: #555;
-  border-radius: 4px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: bold;
-}
+    @media (max-width: 992px) {
+      .footer-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+      }
+      .footer-aside-content {
+        order: -1;
+      }
+    }
