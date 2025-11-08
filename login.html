@@ -7,51 +7,49 @@
   <link rel="stylesheet" href="styles.css" />
   <link
   rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
 </head>
 <body>
 
   <!-- ================= HEADER ================= -->
-  <header>
-  <section class="topbar">
-    <div class="logo-left">
-      <div class="logo-circle"><img src="imagine/logo.png" alt="Logo trường"></div>
-      <div class="logo-text">
-        <H2>TRƯỜNG ĐẠI HỌC TÂY NGUYÊN</H2>
-        <p>TAY NGUYEN UNIVERSITY</p>
-        <small>PHÁT TRIỂN TOÀN DIỆN PHẨM CHẤT, NĂNG LỰC NGƯỜI HỌC</small>
+  <header class="site-header" id="header">
+      <div class="header-top">
+        <div class="container header-top-inner">
+          <a href="#" class="logo-container">
+            <img src="assests/logotaynguyen.webp" alt="Trường Đại học Tây Nguyên" class="logo-img">
+            <img src="assests/logo2.jpg" alt="Thương hiệu nhận diện" class="bo_nhan_dien-img">
+          </a>
+          <h1 class="site-title">E - LEARNING</h1>
+        </div>
       </div>
-    </div>
-    <h1 class="site-title">E - LEARNING</h1>
-  </section>
-
-  <nav class="navbar">
-    <div class="nav-left">
-      <select id="lang-btn">
-        <option value="VI">VI</option>
-        <option value="EN">EN</option>
-      </select>
-    </div>
-
-    <div class="nav-right">
-      <ul class="menu">
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Đào tạo</a></li>
-        <li><a href="#">Khóa học</a></li>
-        <li><a href="#">Tin tức</a></li>
-        <li><a href="#">Liên hệ</a></li>
-      </ul>
-
-      <div class="social-icons">
-        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <div class="header-bottom">
+        <div class="container header-bottom-inner">
+          <div class="header-actions">
+            <select id="lang-btn">
+              <option value="VI">VI</option>
+              <option value="EN">EN</option>
+            </select>
+          </div>
+          <nav class="main-navigation">
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <ul>
+              <li><a href="#Home">TRANG CHỦ</a></li>
+              <li><a href="#About">GIỚI THIỆU</a></li>
+              <li><a href="#">ĐÀO TẠO</a></li>
+              <li><a href="#Courses">KHÓA HỌC</a></li>
+              <li><a href="#">TIN TỨC</a></li>
+              <li><a href="#Contact">LIÊN HỆ</a></li>
+            </ul>
+          </nav>
+          <div class="social-links">
+            <a href="https://www.facebook.com/dhtn567"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/tay-nguyen-university/?originalSubdomain=vn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
-</header>
+    </header>
 
   <!-- ================= MAIN ================= -->
   <main>
@@ -119,5 +117,7 @@
       </div>
     </section>
   </footer>
+
+  <script src="script_login.js"></script>
 </body>
 </html>
