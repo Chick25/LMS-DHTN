@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #EFF6FF;
+  color: #000;
+}
+
+/* ================= HEADER ================= */
+header {
+  background: white;
+  border-bottom: 4px solid #0F63AC;
+}
+
+.topbar {
+  height: 81px;
+  border-bottom: 1px solid #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-left {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 40px;
+  gap: 15px;
+}
+
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* ✅ canh thẳng đầu dòng */
+  justify-content: center;
+  font-size: 14px;
+  color: #0F63AC;
+  line-height: 1.4;
+}
+
+.logo-text h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0F63AC;
+  margin-bottom: 2px;
+}
+
+.logo-text .p_underline {
+  font-size: 14px;
+  color: #0F63AC;
+  margin-bottom: 2px;
+}
+
+.logo-text small {
+  font-size: 10px;
+  color: #0F63AC;
+  text-decoration:overline;
+  text-underline-offset: 4px;
+  margin-top: 2px;
+}
+
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.site-title {
+  color: #0F63AC;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.navbar {
+  background: #0F63AC;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* trái & phải */
+  padding: 0 40px;
+}
+
+.nav-left select {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* khoảng cách giữa menu và icon */
+}
+
+#lang-btn {
+  background: #0F63AC;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#lang-btn:hover {
+  background: #084A85;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.p_underline{
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 20px;
+}
+
+
+.social-icons a {
+  color: white;
+  font-size: 14px;
+}
+
+/* ================= MAIN ================= */
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 747px;
+  overflow: hidden;
+}
+
+/* Ảnh nền rõ ràng */
+.bg-login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Ảnh lấp kín khung */
+  opacity: 1;          /* 100% rõ nét */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Form đăng nhập rõ ràng, nền trắng hơi trong suốt */
+.login-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 1); /* ✅ form sáng rõ */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Hai phần trong form */
+.login-box {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-guide {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ✅ Căn giữa theo chiều dọc */
+  align-items: center;       /* ✅ Căn giữa theo chiều ngang */
+  border-right: 1px solid #E5E7EB;
+          /* ✅ Canh chữ giữa */
+}
+
+.login-guide h2 {
+  color: #0F63AC;            /* ✅ Màu xanh theo yêu cầu */
+  margin-bottom: 20px;       /* ✅ Tạo khoảng cách giữa h2 và các đoạn p */
+  text-align: center;
+}
+
+.login-guide p {
+  margin-top: 10px;          /* ✅ Giãn cách nhẹ giữa các dòng hướng dẫn */
+  line-height: 1.5;          /* ✅ Dễ đọc hơn */
+}
+
+.login-box {
+  text-align: center;
+}
+
+/* --- Logo trong form --- */
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login-box h3 {
+  color: #0F63AC;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  height: 42px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+button {
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  height: 42px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1E40AF;
+}
+
+.forget {
+  display: block;
+  color: #2563EB;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+footer {
+  background: #09365D;
+  color: white;
+  padding: 0 80px 60px; /* bỏ padding-top để hoa văn dính sát */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.footer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer-text {
+  font-size: 18px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links a,
+.underline {
+  text-decoration: underline;
+  color: white;
+}
+
+.footer-logo {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-note {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.footer-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* ✅ full chiều ngang màn hình */
+  height: 45px;
+  background-image: url("imagine/thocam.png");
+  background-repeat: repeat-x;
+  background-size: auto 45px;
+  border-bottom: 3px solid #052A4A;
+}
+
+/* Đẩy nội dung footer xuống dưới dải hoa văn */
+.footer-grid {
+  margin-top: 80px; /* tương ứng chiều cao của hoa văn + khoảng cách */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
