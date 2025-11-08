@@ -1,3 +1,4 @@
+/* Reset cơ bản */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +11,7 @@ body {
   color: #000;
 }
 
-/* ================= HEADER ================= */
+/* Header */
 :root {
       --color-primary: #0f63ac;
       --color-secondary: #09365d;
@@ -272,6 +273,23 @@ transform: none;
   
 #lang-btn:hover { background: #084A85; }
 
+ .login-button {
+  border: 1px solid var(--color-white);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+.login-button {
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
 .main-navigation {
 margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
 
@@ -316,13 +334,11 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
 main {
   position: relative;
   display: flex;
-  flex-direction: column; /* ✅ để các phần xếp dọc */
   justify-content: center;
   align-items: center;
-  min-height: 747px;      /* ✅ chỉ đặt min-height để vẫn cao khi trống */
-  overflow: visible;      /* ✅ cho phép footer hiển thị đầy đủ */
+  height: 747px;
+  overflow: hidden;
 }
-
 
 /* Ảnh nền rõ ràng */
 .bg-login {
@@ -504,22 +520,21 @@ footer {
   top: 0;
   left: 0;
   width: 100vw; /* ✅ full chiều ngang màn hình */
-  height: 45px;
+  height: 35px;
   background-image: url("imagine/thocam.png");
   background-repeat: repeat-x;
-  background-size: auto 45px;
+  background-size: auto 35px;
   border-bottom: 3px solid #052A4A;
 }
 
+/* Đẩy nội dung footer xuống dưới dải hoa văn */
 .footer-grid {
-  margin-top: 80px; 
+  margin-top: 80px; /* tương ứng chiều cao của hoa văn + khoảng cách */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
 }
 
-
-/* ================= MOBILE FIRST ================= */
 @media (max-width: 768px) {
   
   .site-title,
@@ -622,7 +637,7 @@ footer {
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1fr; /* xếp dọc */
+    grid-template-columns: 1fr; 
     gap: 20px;
     text-align: center;
   }
@@ -631,7 +646,7 @@ footer {
     margin-bottom: 15px;
   }
 
-  /* Logo nằm trên cùng */
+  
   .footer-logo {
     order: -1;
   }
@@ -640,18 +655,16 @@ footer {
     margin: 0 auto;
   }
 
-  /* Chữ trong footer căn giữa */
   .footer-box h3,
   .footer-box p,
   .footer-box a {
     text-align: center;
   }
 
-  /* Bản quyền nằm ở dưới cùng */
+  
   .footer-bottom {
     margin-top: 30px;
     text-align: center;
     font-size: 14px;
   }
 }
-
