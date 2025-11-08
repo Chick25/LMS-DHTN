@@ -11,15 +11,15 @@
       box-sizing: border-box;
     }
 
-    html {
-      font-size: 10px; /* Giảm từ 16px → 15px */
-    }
+
 
     body {
       margin: 0;
       font-family: var(--font-main);
       background-color: var(--color-text-dark);
     }
+
+
 
     a {
       text-decoration: none;
@@ -36,7 +36,7 @@
       max-width: 1920px;
       margin: 0 auto;
       background-color: var(--color-white);
-      overflow: hidden;
+      /* overflow: hidden; */
       position: relative;
     }
 
@@ -68,6 +68,9 @@
       z-index: 1;
     }
 
+
+
+    
     /* === HEADER (giữ nguyên trên background) === */
     /*test*/
     /* Căn giữa E-LEARNING */
@@ -101,6 +104,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
 }
+
 
 /* Responsive: Mobile & Tablet */
 @media (max-width: 1200px) {
@@ -150,90 +154,93 @@
     order: 2;
   }
 }
-    .site-header {
-      background-color: var(--color-primary);
-      box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 10;
-    }
 
-    .header-top {
-      background-color: var(--color-white);
-      padding: 16px 0;
-    }
 
-    .header-top-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .logo-container img{
-      height: 60px;
-      width: auto;
-      object-fit: contain;
-    }
-  /* logo */
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-primary);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+}
 
-    .logo-img {
-      height: 80px;
-      width: auto;
-      object-fit: contain;
-    }
+.header-top {
+  background-color: var(--color-white);
+  padding: 16px 0;
+}
 
-    .site-title {
-      color: #0f5eac;
-      font-weight: 700;
-      font-size: 64px;
-      letter-spacing: 6.4px;
-      margin: 0;
-      text-transform: uppercase;
-      text-align: center;
-    }
+.header-top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.logo-container img{
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+/* logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-    .header-bottom {
-      padding: 8px 0;
-    }
+.logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
 
-    .header-bottom-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.site-title {
+  color: #0f5eac;
+  font-weight: 700;
+  font-size: 64px;
+  letter-spacing: 6.4px;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
 
-    .header-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
+.header-bottom {
+  padding: 8px 0;
+}
 
-    .lang-selector, .login-button {
-      border: 1px solid var(--color-white);
-      border-radius: 4px;
-      background-color: transparent;
-      color: var(--color-white);
-      font-family: var(--font-main);
-      font-weight: 500;
-      font-size: 18px;
-      padding: 5px 14px;
-      cursor: pointer;
-    }
+.header-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-    .login-button {
-      padding: 5px 20px;
-      border-radius: 5px;
-    }
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-    .main-navigation {
-  margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
+.lang-selector, .login-button {
+  border: 1px solid var(--color-white);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 18px;
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+.login-button {
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.main-navigation {
+margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
 
 }
 
@@ -263,9 +270,9 @@
     }
 
     .social-links img {
-      width: 20px;
-      height: 20px;
-      filter: brightness(0) invert(1);
+      width: 30px;
+      height: 30px;
+      /* filter: brightness(0) invert(1); */
     }
 
     /* === TRAINING SECTION === */
@@ -348,7 +355,7 @@
     /* === FOOTER === */
     .site-footer-section {
       background-color: var(--color-secondary);
-      padding: 80px 0 40px;
+      padding: 60px 0;
       position: relative;
       z-index: 5;
     }
@@ -396,23 +403,30 @@
 .footer-container {
   position: relative;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: space-between; 
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 60px;
   min-height: 180px; /* Đủ cao để căn giữa */
-  padding: 20px;
+  padding: 10px;
+ 
 }
 
 /* XÓA margin-left: auto trong .footer-main-content */
 .footer-main-content {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
   flex-grow: 1;
-  text-align: left;
-  
+  text-align: center;
+  top: calc(50% + 40px);
+  width: fit-content;
+
 }
 
 
@@ -451,12 +465,13 @@
     }
 
     .footer-aside-content {
+      position: absolute;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 16px;
-      text-align: center;
       right: 0;
+      
     }
 
     .digital-move-logo {
@@ -497,7 +512,7 @@
 /* Đẩy nội dung footer xuống dưới dãy thổ cẩm */
 .site-footer-section {
   position: relative;
-  padding-top: 100px; /* Đẩy nội dung xuống dưới dãy thổ cẩm */
+  padding-top: 20px; 
   background-color: var(--color-secondary);
   z-index: 0;
 }
@@ -506,7 +521,7 @@
 .footer-aside-content {
   position: absolute !important;
   right: 20px !important;
-  top: 60% !important;
+  top: 50% !important;
   transform: translateY(-50%) !important;
   z-index: 10 !important;
   margin: 0 !important;
@@ -517,6 +532,7 @@
   gap: 16px;
   text-align: center;
   width: fit-content;
+  height: 10px;
 }
 
 /* Đảm bảo .footer-container có không gian cho absolute */
@@ -535,10 +551,11 @@
 }
 
 .footer-decorative-strip img {
-  height: 38px; /* vừa nhỏ hơn container một chút để không bị cắt */
+  height: 43px; /* vừa nhỏ hơn container một chút để không bị cắt */
   width: auto;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
 }
 
 
