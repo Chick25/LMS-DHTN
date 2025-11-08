@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TNU E-Learning</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRƯỜNG ĐẠI HỌC TÂY NGUYÊN - E-Learning</title>
+     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_crs.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-
-  <!-- ================= HEADER ================= -->
+        <!-- Header -->
+        <!-- ================= HEADER ================= -->
   <header class="site-header" id="header">
       <div class="header-top">
         <div class="container header-top-inner">
@@ -32,6 +30,7 @@
               <option value="VI">VI</option>
               <option value="EN">EN</option>
             </select>
+            <a href="login.html" class="login-button">Đăng Nhập</a>
           </div>
           <nav class="main-navigation">
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
@@ -39,7 +38,7 @@
               <li><a href="index.html">TRANG CHỦ</a></li>
               <li><a href="#About">GIỚI THIỆU</a></li>
               <li><a href="#">ĐÀO TẠO</a></li>
-              <li><a href="course.html">KHÓA HỌC</a></li>
+              <li><a href="#Courses">KHÓA HỌC</a></li>
               <li><a href="#">TIN TỨC</a></li>
               <li><a href="#Contact">LIÊN HỆ</a></li>
             </ul>
@@ -53,40 +52,42 @@
       </div>
     </header>
 
-  <!-- ================= MAIN ================= -->
-  <main>
-  <img src="imagine/decor.png" alt="background" class="bg-login">
-  <section class="login-section">
-    <div class="login-guide">
-      <h2>HƯỚNG DẪN ĐĂNG NHẬP</h2>
-      <p>1. Giảng viên, cán bộ quản lý ở TNU sử dụng tài khoản trên phần mềm nhập điểm...</p>
-      <p>2. Sinh viên sử dụng tài khoản trên phần mềm đăng ký học phần để đăng nhập.</p>
-    </div>
+        <!-- Main content -->
+        <main class="main-content">
+            <h1 class="title">TRƯỜNG ĐẠI HỌC TÂY NGUYÊN</h1>
 
-    <div class="login-box">
-      <div class="login-header">
-        <img src="imagine/logo.png" alt="Logo" class="login-logo">
-        <h3>TNU E-LEARNING</h3>
+            <div class="filter-bar">
+                <select class="year-select">
+                <option selected>Năm 2025-2026 (Học kỳ I)</option>
+                <option>Năm 2025-2026 (Học kỳ II)</option>
+                <option>Năm 2024-2025 (Học kỳ I)</option>
+                </select>
+
+                <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm khóa học" />
+                <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="semester-list">
+                <div class="semester-item">Năm 2025 - 2026: Học Kì I</div>
+                <div class="semester-item">Năm 2025 - 2026: Học Kì II</div>
+                <div class="semester-item">Năm 2025 - 2026: Học Kì III</div>
+                <div class="semester-item">Năm 2024 - 2025: Học Kì I</div>
+                <div class="semester-item">Năm 2024 - 2025: Học Kì II</div>
+                <div class="semester-item">Năm 2024 - 2025: Học Kì III</div>
+                <div class="semester-item">Năm 2023 - 2024: Học Kì I</div>
+                <div class="semester-item">Năm 2023 - 2024: Học Kì II</div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+     <div class="footer-decorative-strip">
+        <img src="assests/thocam.png" alt="thocam1">
+        <img src="assests/thocam.png" alt="thocam2">
+        <img src="assests/thocam.png" alt="thocam3">
       </div>
-
-      <form>
-        <input type="text" placeholder="UserID">
-        <input type="password" placeholder="Password">
-        <button>Đăng nhập</button>
-        <a href="#" class="forget">Quên mật khẩu?</a>
-      </form>
-    </div>
-  </section>
-</main>
-
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="footer-decorative-strip">
-      <img src="assests/thocam4.png" alt="thocam1">
-      <img src="assests/thocam4.png" alt="thocam2">
-      <img src="assests/thocam4.png" alt="thocam3">
-    </div>
     <section class="footer-grid">
       <div class="footer-box">
         <h4 class="footer-title">TNU E-Learning</h4>
@@ -123,7 +124,5 @@
       </div>
     </section>
   </footer>
-
-  <script src="script_login.js"></script>
 </body>
 </html>
