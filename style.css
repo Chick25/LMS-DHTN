@@ -48,7 +48,7 @@
     }
 
     /* === HERO BACKGROUND SECTION === */
-    .hero-background {
+    /* .hero-background {
       width: 100%;
       height: 601px;
       background-image: url('/assets/hero-background.jpg');
@@ -59,16 +59,63 @@
       z-index: 0;
     }
 
-    /* Overlay để làm nổi đẹp hơn nếu cần */
+   
     .hero-background::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: linear-gradient(to bottom, rgba(15, 99, 172, 0.1), rgba(0, 94, 160, 0.4));
       z-index: 1;
-    }
+    } */
 
+    /* === HERO BACKGROUND SLIDESHOW === */
+.hero-background {
+  position: relative;
+  width: 100%;
+  height: 601px;
+  overflow: hidden;
+  z-index: 0;
+}
 
+.hero-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Overlay gradient (thay thế ::before) */
+.hero-overlay {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(15, 99, 172, 0.1), rgba(0, 94, 160, 0.4));
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Đảm bảo training-section chồng lên hero */
+.training-section {
+  position: relative;
+  z-index: 5;
+  margin-top: -100px;
+}
 
     
     /* === HEADER (giữ nguyên trên background) === */
