@@ -618,10 +618,12 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
     height: 60px;
   }
   .header-actions {
-    justify-content: center;
-    width: 100%;
-    margin-top: 12px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important; /* Bắt buộc căn trái */
+  width: auto !important;                 /* Không chiếm 100% */
+  margin-top: 0 !important;               /* Loại bỏ margin-top gây lệch */
+}
   .training-cta {
     font-size: 24px;
     padding: 12px 24px;
