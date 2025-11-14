@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TNU E-Learning</title>
-  <link rel="stylesheet" href="aca_style.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="aca_style.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  
 </head>
 <body>
 
@@ -25,14 +31,15 @@
               <option value="VI">VI</option>
               <option value="EN">EN</option>
             </select>
+             <a href="login.html" class="login-button">Đăng Nhập</a>
           </div>
           <nav class="main-navigation">
             <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <ul>
-              <li><a href="#Home">TRANG CHỦ</a></li>
+              <li><a href="index.html">TRANG CHỦ</a></li>
               <li><a href="#About">GIỚI THIỆU</a></li>
               <li><a href="#">ĐÀO TẠO</a></li>
-              <li><a href="#Courses">KHÓA HỌC</a></li>
+              <li><a href="course.html">KHÓA HỌC</a></li>
               <li><a href="#">TIN TỨC</a></li>
               <li><a href="#Contact">LIÊN HỆ</a></li>
             </ul>
@@ -44,73 +51,13 @@
           </div>
         </div>
       </div>
-  </header>
-
-  <main class="container">
-      <figure class="banner">
-        <img src="imagine/academicsmain.jpg" alt="Ảnh banner Đại học Tây Nguyên">
-      </figure>
-
-      <!-- === SECTION: TẦM NHÌN === -->
-      <section id="vision" class="vision">
-        <div class="vision-inner">
-          <div class="vision-cards">
-            <article class="vision-card">
-              <p>
-                Là một tổ chức giáo dục uy tín có ảnh hưởng đến phát triển của các trường đại học đào tạo giáo viên
-                trong khu vực miền Trung cũng như toàn quốc.
-              </p>
-            </article>
-
-            <article class="vision-card">
-              <p>
-                Là nơi tập hợp một nhóm các nhà khoa học và chuyên gia có trình độ cao, tài năng và nhiệt tình.
-              </p>
-            </article>
-
-            <article class="vision-card">
-              <p>
-                Đảm bảo các điều kiện về đào tạo chuyên nghiệp và nghiên cứu khoa học, để học viên có đủ năng lực thực hành,
-                thích ứng nhanh với mọi tình huống, sáng tạo bền vững.
-              </p>
-            </article>
-          </div>
-
-          <figure class="vision-img">
-            <img src="imagine/aca1.jpg" alt="Ảnh minh họa tầm nhìn">
-          </figure>
-        </div>
-      </section>
-
-      <!-- === SECTION: KHÓA HỌC === -->
-      <section id="courses" class="section course">
-        <div class="section-inner">
-          <h2 class="section-title">KHÓA HỌC</h2>
-          <hr class="section-line" aria-hidden="true">
-          <p class="section-desc">
-            Hệ thống đào tạo trực tuyến của Trường Đại Học Tây Nguyên là một trong những hệ thống hàng
-            đầu trong việc cung cấp các khóa học, giáo dục và nghiên cứu.
-          </p>
-
-          <div class="course-grid">
-            <article class="course-card">
-              <img src="imagine/aca2.jpg" alt="Giảng dạy">
-              <h3>Giảng dạy</h3>
-            </article>
-
-            <article class="course-card">
-              <img src="imagine/aca3.jpg" alt="Học tập">
-              <h3>Học tập</h3>
-            </article>
-
-            <article class="course-card">
-              <img src="imagine/aca4.jpg" alt="Nghiên cứu">
-              <h3>Nghiên cứu</h3>
-            </article>
-          </div>
-        </div>
-      </section>
+    </header>
+  <main class="main-content">
+    <section class="poster">
+      <img src="imagine/poster.png" alt="Poster giới thiệu">
+    </section>
   </main>
+
 
     <!-- Khối FOOTER -->
   <footer>
@@ -151,6 +98,20 @@
       </div>
     </section>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  // Chọn nút hamburger
+  const toggle = document.querySelector('.main-navigation .menu-toggle');
+  // Chọn menu (ul) trong main-navigation
+  const menu = document.querySelector('.main-navigation ul');
 
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      // Toggle class 'show' để hiển thị menu trên mobile
+      menu.classList.toggle('show');
+    });
+  }
+});
+  </script>
 </body>
 </html>
