@@ -54,7 +54,7 @@
 }
 @media (min-width: 768px) {
   .about-section { padding: 80px 40px; text-align: left; }
-  .about-text    { font-size: 1.5rem; text-align: left; }
+  .about-text    { font-size: 1.5rem; text-align: center; }
 }
 @media (min-width: 1200px) {
   .about-section { padding: 88px 60px; }
@@ -222,10 +222,13 @@
     gap:1rem;
   }
   .carousel-slide {
-    min-width:calc(100% - 32px);
-    max-width:calc(100% - 32px);
-    grid-template-columns:1fr;
-    scroll-snap-align:center;
+    width: 100vw; /* slide bằng đúng chiều ngang màn hình */
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    padding: 16px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr; /* nội dung trong slide theo cột */
   }
   .dept-card { padding:1.5rem; min-height:120px; }
   .carousel-controls { display:none; }
