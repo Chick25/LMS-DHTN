@@ -1,0 +1,352 @@
+:root {
+    --primary: #0F63AC;
+    --primary-dark: #084194;
+    --primary-darker: #09365D;
+    --bg-main: #F5F5F5;
+    --text: #333333;
+    --text-muted: #999999;
+    --warning: #E67E22;
+    --danger: #E74C3C;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-main);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.wrapper { display: flex; min-height: 100vh; }
+
+/* Sidebar trái */
+.sidebar {
+    width: 250px;
+    background: var(--primary);
+    color: white;
+    flex-shrink: 0;
+}
+
+.sidebar__header { height: 200px; text-align: center; position: relative; padding-top: 20px; }
+.sidebar__avatar { width: 80px; height: 80px; background: white; border: 1px solid #000; border-radius: 50%; position: absolute; top: 111px; left: 50%; transform: translateX(-50%); }
+.sidebar__title { font-size: 26px; font-weight: 700; }
+.sidebar__nav { padding: 80px 20px 20px; }
+
+.nav-item {
+    display: flex; align-items: center; height: 78px; padding: 0 16px; margin-bottom: 48px;
+    border-radius: 10px; color: white; text-decoration: none; font-size: 24px; transition: background 0.2s;
+}
+.nav-item--active, .nav-item:hover { background: rgba(255,255,255,0.15); }
+.nav-item__icon { font-size: 28px; margin-right: 12px; }
+
+/* Hamburger & Overlay */
+.hamburger {
+    display: none; /* mặc định desktop ẩn */
+    position: absolute; /* gắn vào header */
+    top: 50%;         /* căn giữa theo chiều dọc header */
+    left: 20px;       /* cách trái header 20px */
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: var(--primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 900;
+}
+
+/* Nội dung chính */
+.main-content { flex: 1; display: flex; flex-direction: column; }
+
+.header {
+    height: 129px; background: white; border-bottom: 1px solid #e0e0e0;
+    padding-left: 20px; display: flex; align-items: center;
+}
+.header__branding img { height: 100%; }
+
+/* Dashboard chính */
+.dashboard {
+    flex: 1;
+    padding: 32px 40px 100px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: space-between;   /* để sidebar-right dính phải */
+}
+
+.dashboard-center {
+    flex: 1;                          /* chiếm hết chỗ còn lại */
+    max-width: 1200px;                /* giới hạn chiều rộng tối đa */
+    margin: 0 auto;                   /* căn giữa tuyệt đối */
+    display: flex;
+    flex-direction: column;
+    align-items: center;              /* căn giữa theo chiều dọc nếu cần */
+}
+
+/* Tiêu đề chỉ thuộc phần chính */
+.dashboard__title {
+    width: 100%;
+    text-align: left;              /* tiêu đề căn giữa */
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Khu vực chính chứa tiêu đề + danh sách khóa học */
+.main-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 cột bằng nhau */
+    gap: 30px;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;                          /* căn giữa toàn bộ grid */
+    justify-content: center;
+}
+
+.course-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 240px;                    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.course-card__banner {
+    height: 130px;
+    background: linear-gradient(162deg, var(--primary), var(--primary-dark));
+    flex-shrink: 0;
+}
+
+.course-card__title {
+    padding: 16px 20px 8px;
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.3;
+    min-height: 52px;                 /* ép tiêu đề chiếm đúng 2 dòng nếu dài */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;            /* tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-card__instructor {
+    padding: 0 20px 18px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Sidebar phải - nhỏ hơn, sát phải */
+.sidebar-right {
+    width: 340px;                    /* Giảm từ 420px → 360px */
+    flex-shrink: 0;
+    margin-left: auto;               /* Đẩy sát lề phải */
+    margin-top: 66px;                /* Căn bằng với tiêu đề "Bảng Điều Khiển" */
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.widget, .stat-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 22px;
+}
+
+.widget__title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.assignment {
+    background: #f9f9f9;
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+
+.assignment strong { font-size: 15px; display: block; margin-bottom: 4px; }
+.assignment p { font-size: 11.5px; color: var(--primary); margin-bottom: 6px; }
+.due { font-size: 11px; font-weight: 500; }
+.due--warning { color: var(--warning); }
+.due--danger { color: var(--danger); }
+
+.stats-grid { display: flex; flex-direction: column; gap: 18px; }
+.stat-card { border-top: 3px solid var(--primary); }
+.stat-card__label { font-size: 12px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.stat-card__value { font-size: 28px; font-weight: 700; color: var(--primary); }
+
+/* Footer */
+.footer {
+    height: 71px;
+    background: var(--primary-darker);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.footer__nav {
+    display: flex; align-items: center; gap: 20px; font-size: 20px;
+}
+.footer__nav a { color: white; text-decoration: none; }
+.footer__nav span { color: #ccc; }
+
+
+
+@media (max-width: 900px) {
+
+    /* Ẩn sidebar mặc định */
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: var(--primary);
+        overflow-y: auto;      /* scroll khi menu dài */
+        transition: left .3s ease;
+        z-index: 1100;
+    }
+
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Hiện nút hamburger */
+    .hamburger {
+        display: block;
+        position: absolute;  /* ban đầu ở header */
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        font-size: 28px;
+        color: var(--primary);
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1101;
+        transition: all .3s ease;
+    }
+
+    /* Overlay khi mở menu */
+    .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 900;
+    }
+    .overlay.active {
+        display: block;
+    }
+
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    body.sidebar-open .hamburger {
+    position: fixed;
+    top: 20px;
+    left: 260px; /* gắn sát ngoài sidebar */
+    color: white;
+}
+
+    .header__branding img:nth-child(2) {
+    display: none;
+    }
+
+    /* Logo trường căn giữa */
+    .header {
+        justify-content: center;
+        position: relative; /* cần để hamburger absolute */
+    }
+
+    /* Logo nhỏ lại cho phù hợp mobile */
+    .header__branding img:nth-child(1) {
+        height: 70px;
+        width: auto;
+    }
+    /* Main content dịch sang trái khi sidebar ẩn */
+    .main-content {
+        margin-left: 0;
+    }
+
+    /* Dashboard xếp dọc */
+    .dashboard {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Phần chính chiếm full width */
+    .dashboard-center {
+        max-width: 100%;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    /* Grid khóa học: từ 3 cột → còn 1 cột */
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .course-card {
+        height: 260px;        /* tự động co theo nội dung */
+        min-height: 220px;   /* vẫn đảm bảo nhìn đều */
+    }
+
+    /* Sidebar phải đưa xuống dưới */
+    .sidebar-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Header tối ưu cho mobile */
+    .footer {
+        height: auto;
+        padding: 14px 0;
+        text-align: center;
+    }
+
+    .footer__nav {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 16px;
+    }
+
+    .footer__nav span {
+        display: none;   /* dấu các dấu "|" cho gọn */
+    }
+}
