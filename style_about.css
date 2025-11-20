@@ -1,0 +1,299 @@
+/* ============================================================= */
+/* 1. HERO SECTION – responsive, không dùng !important thừa     */
+/* ============================================================= */
+#hero.hero-section,
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 601px;
+  background: linear-gradient(90deg, rgba(0,94,160,.5), rgba(0,115,178,.5)),
+              url('assests/images/bg3.jpg') center/cover no-repeat;
+  color: var(--color-white);
+  text-align: center;
+  margin-top: -150px;
+  padding: 0 20px;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 800px;
+}
+.hero-title   { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+.hero-subtitle { font-size: 1.5rem; font-weight: 400; }
+
+@media (max-width: 768px) {
+  .hero-section { height: 400px; }
+  .hero-title   { font-size: 2rem; }
+  .hero-subtitle{ font-size: 1.125rem; }
+}
+@media (max-width: 480px) {
+  .hero-title   { font-size: 1.75rem; }
+  .hero-subtitle{ font-size: 1rem; }
+}
+
+/* ============================================================= */
+/* 2. ABOUT SECTION – mobile-first, text-center trên mobile    */
+/* ============================================================= */
+.about-section {
+  background-color: var(--color-background-light);
+  padding: 60px 20px;
+  text-align: center;
+}
+.about-section .container { max-width: 1200px; margin: 0 auto; }
+.about-text {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 1.2px;
+  margin: 0 auto;
+  max-width: 900px;
+}
+@media (min-width: 768px) {
+  .about-section { padding: 80px 40px; text-align: left; }
+  .about-text    { font-size: 1.5rem; text-align: left; }
+}
+@media (min-width: 1200px) {
+  .about-section { padding: 88px 60px; }
+}
+
+/* ============================================================= */
+/* 3. FEATURES SECTION – grid responsive                        */
+/* ============================================================= */
+.features-section {
+  background-color: var(--color-white);
+  padding: 80px 20px;
+}
+.section-title {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: var(--color-background-light);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  transition: transform .3s ease;
+}
+.feature-card:hover { transform: translateY(-5px); }
+.feature-icon      { font-size: 2.4rem; }
+.feature-title     { color: var(--color-primary); font-size: 1.125rem; font-weight: 700; }
+.feature-description { font-size: .875rem; color:#666; line-height:1.7; }
+
+@media (min-width: 768px) {
+  .features-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (min-width: 1024px) {
+  .features-grid { grid-template-columns: repeat(3,1fr); gap:2rem; }
+  .feature-card { padding:2rem; }
+}
+
+/* ============================================================= */
+/* 4. DEPARTMENTS SECTION – carousel dual-mode (desktop + mobile) */
+/* ============================================================= */
+.departments-section {
+  background: linear-gradient(to right,#005EA0,#0073B2);
+  color:#fff;
+  padding:80px 20px;
+  overflow:hidden;
+}
+.departments-section .container { max-width:1400px; margin:0 auto; }
+
+.section-title-white {
+  font-size:2.2rem; font-weight:700; text-align:center;
+  margin-bottom:2.5rem; color:#fff;
+}
+
+/* ---- Wrapper ---- */
+.carousel-wrapper {
+  overflow:hidden;
+  border-radius:16px;
+  margin-bottom:2rem;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(4px);
+}
+
+/* ---- Track (desktop: JS transform) ---- */
+.carousel-track {
+  display:flex;
+  gap:1.5rem;
+  transition:transform .4s ease;
+  padding:1.5rem;
+}
+
+/* ---- Slide (desktop: 4-col) ---- */
+.carousel-slide {
+  min-width:100%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+}
+
+/* ---- Card ---- */
+.dept-card {
+  background:rgba(255,255,255,.18);
+  border-radius:14px;
+  padding:1.8rem 1.2rem;
+  text-align:center;
+  transition:transform .3s ease;
+  border:1px solid rgba(255,255,255,.15);
+  min-height:140px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.dept-card:hover { transform:translateY(-8px); }
+.dept-card h3 {
+  font-size:1.25rem;
+  margin:0 0 .5rem;
+  font-weight:600;
+  word-break:keep-all;
+}
+.dept-card p {
+  font-size:.95rem;
+  margin:0;
+  opacity:.95;
+  line-height:1.5;
+}
+.dept-card a { color:#ffeb3b; text-decoration:underline; font-weight:500; }
+
+/* ---- Controls ---- */
+.carousel-controls {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1.5rem;
+}
+.carousel-btn {
+  background:rgba(255,255,255,.25);
+  border:none;
+  width:44px; height:44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:.3s;
+}
+.carousel-btn:hover { background:rgba(255,255,255,.4); }
+.carousel-btn img { width:20px; filter:invert(1); }
+.carousel-pagination { font-size:1.1rem; font-weight:600; }
+.carousel-pagination .current-page { color:#ffeb3b; }
+
+/* ---- Tablet (2-col) ---- */
+@media (min-width:769px) and (max-width:1024px) {
+  .carousel-slide { grid-template-columns:repeat(2,1fr); }
+}
+
+/* ---- Mobile (swipe + scroll) ---- */
+@media (max-width:768px) {
+  .departments-section { padding:60px 16px; }
+  .section-title-white { font-size:1.8rem; margin-bottom:2rem; }
+
+  .carousel-wrapper {
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    margin-bottom:1.5rem;
+  }
+  .carousel-track {
+    width:max-content;
+    padding:1rem 16px;
+    transform:none !important;
+    gap:1rem;
+  }
+  .carousel-slide {
+    min-width:calc(100% - 32px);
+    max-width:calc(100% - 32px);
+    grid-template-columns:1fr;
+    scroll-snap-align:center;
+  }
+  .dept-card { padding:1.5rem; min-height:120px; }
+  .carousel-controls { display:none; }
+}
+
+/* ============================================================= */
+/* 5. FOOTER – responsive, clean layout                         */
+/* ============================================================= */
+.site-footer-section {
+  background-color:var(--color-secondary);
+  padding:60px 20px 40px;
+  position:relative;
+  text-align:center;
+}
+.footer-decorative-strip {
+  position:absolute; top:0; left:0;
+  width:100%; height:42px;
+  background-color:var(--color-secondary);
+  display:flex; justify-content:center; align-items:center;
+  overflow:hidden; z-index:1;
+}
+.footer-decorative-strip img { height:43px; width:auto; object-fit:contain; }
+
+.footer-container {
+  position:relative; z-index:2;
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns:1fr; gap:2rem;
+}
+.footer-main-content {
+  display:flex; flex-direction:column; align-items:center; gap:1rem;
+}
+.copyright-text {
+  color:var(--color-white); opacity:.6;
+  font-size:1.25rem; font-weight:400; margin:0;
+}
+.footer-nav ul {
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:.5rem; list-style:none; padding:0; margin:0;
+}
+.footer-nav a {
+  color:var(--color-white); font-size:1.25rem;
+  transition:opacity .2s;
+}
+.footer-nav a:hover { opacity:.8; }
+.footer-nav .separator,
+.footer-nav .id-text { color:#666; }
+
+.footer-aside-content {
+  display:flex; flex-direction:column; align-items:center; gap:1rem;
+}
+.digital-move-logo { width:72px; height:71px; }
+.digital-move-text {
+  color:var(--color-white); font-size:1rem;
+  line-height:1.2; max-width:261px; margin:0;
+}
+
+/* Tablet & Desktop */
+@media (min-width:768px) {
+  .footer-container { grid-template-columns:1fr 1fr; text-align:left; }
+  .footer-main-content,
+  .footer-aside-content { align-items:flex-start; }
+}
+@media (min-width:992px) {
+  .footer-container { grid-template-columns:2fr 1fr 1fr auto; text-align:left; }
+  .footer-aside-content { justify-content:flex-end; }
+}
+
+/* ============================================================= */
+/* 6. OPTIONAL – giữ lại các rule cũ không xung đột            */
+/* ============================================================= */
+/* (các rule cũ như .container, .header… giữ nguyên) */

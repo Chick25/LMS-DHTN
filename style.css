@@ -404,6 +404,10 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
   padding: 60px 0;
   position: relative;
   z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr; /* xếp dọc */
+    gap: 20px;
+    text-align: center;
 }
 
 .footer-decorative-strip {
@@ -499,7 +503,9 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
   align-items: center;
   gap: 16px;
   right: 0;
-  
+  /* transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; */
 }
 
 .digital-move-logo {
@@ -536,11 +542,15 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
   padding-top: 20px; 
   background-color: var(--color-secondary);
   z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr; /* xếp dọc */
+  gap: 20px;
+  text-align: center;
 }
 
 /* === CỐ ĐỊNH PHẦN DIGITAL MOVE Ở GÓC PHẢI FOOTER === */
 .footer-aside-content {
-  position: absolute;
+  /* position: absolute; */
   right: 100px;
   top: 40%;
   transform: translateY(-50%);
@@ -618,11 +628,9 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
     height: 60px;
   }
   .header-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start !important; /* Bắt buộc căn trái */
-    width: auto !important;                 /* Không chiếm 100% */
-    margin-top: 0 !important;               /* Loại bỏ margin-top gây lệch */
+    justify-content: center;
+    width: 100%;
+    margin-top: 12px;
   }
   .training-cta {
     font-size: 24px;
@@ -716,11 +724,21 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
 
 @media (max-width: 992px) {
   .footer-container {
-    flex-direction: column;
+    flex-direction: column; /* xếp dọc */
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 20px;
   }
+  .footer-main-content {
+    order: 1 ; /* nội dung chính lên trên */
+  }
+
   .footer-aside-content {
-    order: -1;
+    order: 2 ; /* logo xuống dưới */
+  }
+
+  .footer-decorative-strip {
+    order: 3; /* decorative strip xuống cuối cùng nếu muốn */
+    margin-bottom: 0;
   }
 }
