@@ -5,7 +5,6 @@
     --bg-main: #F5F5F5;
     --text: #333333;
     --text-muted: #999999;
-    --warning: #E67E22;
     --danger: #E74C3C;
 }
 
@@ -78,16 +77,16 @@ body {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    justify-content: space-between;   /* để sidebar-right dính phải */
+    justify-content: space-between;   /
 }
 
 .dashboard-center {
-    flex: 1;                          /* chiếm hết chỗ còn lại */
-    max-width: 1200px;                /* giới hạn chiều rộng tối đa */
-    margin: 0 auto;                   /* căn giữa tuyệt đối */
+    flex: 1;                          
+    max-width: 1200px;                
+    margin: 0 auto;                   
     display: flex;
     flex-direction: column;
-    align-items: center;              /* căn giữa theo chiều dọc nếu cần */
+    align-items: center;              
 }
 
 /* Tiêu đề chỉ thuộc phần chính */
@@ -159,7 +158,7 @@ body {
 }
 
 .course-card {
-    position: relative;           /* cần cho ::before nếu muốn */
+    position: relative;           
     cursor: pointer;
 }
 
@@ -178,7 +177,6 @@ body {
     color: inherit;
 }
 
-/* Giữ hiệu ứng hover nâng card (chỉ áp dụng cho card, không bị link chặn) */
 .course-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
@@ -200,12 +198,11 @@ body {
     opacity: 1;
 }
 
-/* Sidebar phải - nhỏ hơn, sát phải */
 .sidebar-right {
-    width: 340px;                    /* Giảm từ 420px → 360px */
+    width: 340px;                    
     flex-shrink: 0;
-    margin-left: auto;               /* Đẩy sát lề phải */
-    margin-top: 66px;                /* Căn bằng với tiêu đề "Bảng Điều Khiển" */
+    margin-left: auto;               
+    margin-top: 66px;                
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -357,7 +354,6 @@ justify-content: center;
 
 @media (max-width: 900px) {
 
-    /* Ẩn sidebar mặc định */
     .sidebar {
         position: fixed;
         left: -250px;
@@ -378,7 +374,7 @@ justify-content: center;
     /* Hiện nút hamburger */
     .hamburger {
         display: block;
-        position: absolute;  /* ban đầu ở header */
+        position: absolute;  
         top: 50%;
         left: 20px;
         transform: translateY(-50%);
@@ -418,37 +414,33 @@ justify-content: center;
     display: none;
     }
 
-    /* Logo trường căn giữa */
     .header {
         justify-content: center;
         position: relative; /* cần để hamburger absolute */
     }
 
-    /* Logo nhỏ lại cho phù hợp mobile */
     .header__branding img:nth-child(1) {
         height: 70px;
         width: auto;
     }
-    /* Main content dịch sang trái khi sidebar ẩn */
+    
     .main-content {
         margin-left: 0;
     }
 
-    /* Dashboard xếp dọc */
+
     .dashboard {
         flex-direction: column;
         padding: 20px;
         gap: 20px;
     }
 
-    /* Phần chính chiếm full width */
     .dashboard-center {
         max-width: 100%;
         width: 100%;
         align-items: flex-start;
     }
 
-    /* Grid khóa học: từ 3 cột → còn 1 cột */
     .courses-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -456,17 +448,15 @@ justify-content: center;
     }
 
     .course-card {
-        height: 260px;        /* tự động co theo nội dung */
-        min-height: 220px;   /* vẫn đảm bảo nhìn đều */
+        height: 260px;        
+        min-height: 220px;   
     }
 
-    /* Sidebar phải đưa xuống dưới */
     .sidebar-right {
         width: 100%;
         margin-top: 20px;
     }
 
-    /* Header tối ưu cho mobile */
     .footer {
         height: auto;
         padding: 14px 0;
@@ -480,6 +470,6 @@ justify-content: center;
     }
 
     .footer__nav span {
-display: none;   /* dấu các dấu "|" cho gọn */
+        display: none;   
     }
 }
