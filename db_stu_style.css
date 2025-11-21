@@ -5,7 +5,6 @@
     --bg-main: #F5F5F5;
     --text: #333333;
     --text-muted: #999999;
-    --warning: #E67E22;
     --danger: #E74C3C;
 }
 
@@ -42,10 +41,10 @@ body {
 
 /* Hamburger & Overlay */
 .hamburger {
-    display: none; /* mặc định desktop ẩn */
-    position: absolute; /* gắn vào header */
-    top: 50%;         /* căn giữa theo chiều dọc header */
-    left: 20px;       /* cách trái header 20px */
+    display: none; 
+    position: absolute; 
+    top: 50%;        
+    left: 20px;       
     transform: translateY(-50%);
     font-size: 28px;
     color: var(--primary);
@@ -78,22 +77,21 @@ body {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    justify-content: space-between;   /* để sidebar-right dính phải */
+    justify-content: space-between;   
 }
 
 .dashboard-center {
-    flex: 1;                          /* chiếm hết chỗ còn lại */
-    max-width: 1200px;                /* giới hạn chiều rộng tối đa */
-    margin: 0 auto;                   /* căn giữa tuyệt đối */
+    flex: 1;                          
+    max-width: 1200px;               
+    margin: 0 auto;                   
     display: flex;
     flex-direction: column;
-    align-items: center;              /* căn giữa theo chiều dọc nếu cần */
+    align-items: center;              
 }
 
-/* Tiêu đề chỉ thuộc phần chính */
 .dashboard__title {
     width: 100%;
-    text-align: left;              /* tiêu đề căn giữa */
+    text-align: left;             
     margin-bottom: 40px;
     font-size: 28px;
     font-weight: 700;
@@ -159,6 +157,47 @@ body {
     font-weight: 500;
 }
 
+
+.course-card {
+    position: relative;           
+    cursor: pointer;
+}
+
+.course-card__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;               
+    transition: none;             
+}
+
+.course-card__link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.course-card__link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: rgba(15, 99, 172, 0.05);   
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.course-card:hover .course-card__link::before {
+    opacity: 1;
+}
+
 /* Sidebar phải - nhỏ hơn, sát phải */
 .sidebar-right {
     width: 340px;                    /* Giảm từ 420px → 360px */
@@ -194,7 +233,6 @@ body {
 .assignment strong { font-size: 15px; display: block; margin-bottom: 4px; }
 .assignment p { font-size: 11.5px; color: var(--primary); margin-bottom: 6px; }
 .due { font-size: 11px; font-weight: 500; }
-.due--warning { color: var(--warning); }
 .due--danger { color: var(--danger); }
 
 .stats-grid { display: flex; flex-direction: column; gap: 18px; }
@@ -285,30 +323,26 @@ body {
     display: none;
     }
 
-    /* Logo trường căn giữa */
     .header {
         justify-content: center;
         position: relative; /* cần để hamburger absolute */
     }
 
-    /* Logo nhỏ lại cho phù hợp mobile */
     .header__branding img:nth-child(1) {
         height: 70px;
         width: auto;
     }
-    /* Main content dịch sang trái khi sidebar ẩn */
+
     .main-content {
         margin-left: 0;
     }
 
-    /* Dashboard xếp dọc */
     .dashboard {
         flex-direction: column;
         padding: 20px;
         gap: 20px;
     }
 
-    /* Phần chính chiếm full width */
     .dashboard-center {
         max-width: 100%;
         width: 100%;
@@ -323,8 +357,8 @@ body {
     }
 
     .course-card {
-        height: 260px;        /* tự động co theo nội dung */
-        min-height: 220px;   /* vẫn đảm bảo nhìn đều */
+        height: 260px;        
+        min-height: 220px;   
     }
 
     /* Sidebar phải đưa xuống dưới */
