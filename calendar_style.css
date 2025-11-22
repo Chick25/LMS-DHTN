@@ -1,0 +1,617 @@
+:root {
+  --color-primary: #00a3e0;
+  --color-secondary: #00a629;
+  --color-text-primary: #2d3b45;
+  --color-text-secondary: #5c6b7a;
+  --color-text-light: #757575;
+  --color-text-white: #ffffff;
+  --color-background-main: #ffffff;
+  --color-background-sidebar: #0f63ac;
+  --color-background-footer: #09365d;
+  --color-background-light-gray: #f8f9fa;
+  --color-border-light: #e1e5e9;
+  --color-border-medium: #c7cdd1;
+  --font-family-inter: 'Inter', sans-serif;
+  --font-family-roboto: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+   
+/* CONTENT */
+.content {
+  flex:1;
+  /* padding:20px; */
+  overflow:auto;
+  background:#f0f2f5;
+}
+
+/* CALENDAR HEADER */
+.cal-header {
+  /* background:white; */
+  padding:15px 20px;
+  border-radius:8px 8px 0 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.cal-title {
+  font-size:20px;
+  font-weight:bold;
+  color:#004b8d;
+}
+
+.cal-nav{
+  display: flex;
+  gap: 15px;
+}
+
+.cal-header .cal-nav button {
+  background:#00A3E0;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:4px;
+  cursor:pointer;
+
+}
+
+.cal-header .cal-nav button:nth-child(2),
+.cal-header .cal-nav button:nth-child(3)  {
+  background:#ffffff;
+  color:black;
+  border: 1px solid #C7CDD1;
+
+}
+.cal-header .cal-nav button:nth-child(2):hover,
+.cal-header .cal-nav button:nth-child(3):hover {
+  background-color: #bcbcbc;
+  color: white;
+  /* border-color: #00A3E0; */
+  /* box-shadow: 0 4px 8px rgba(0, 163, 224, 0.2);   */
+}
+
+.cal-nav button:hover { background:#003566; }
+.cal-views button {
+  background:#e9ecef;
+  color:#004b8d;
+  border:none;
+  padding:8px 15px;
+  border-radius:4px;
+  margin-left:8px;
+  cursor:pointer;
+}
+.cal-views button.active {
+  background:#004b8d;
+  color:white;
+}
+
+.cal-header-button{
+  display: flex;
+  align-items: center;
+  justify-content:center ;
+  gap: 15px;
+}
+
+.cal-header-button button{
+  border: 1px solid #C7CDD1;
+  background: #FFFFFF;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+.cal-header-button button:hover{
+  background-color: #bcbcbc;
+  color: rgb(255, 255, 255);
+}
+
+/* LEGEND */
+/* .legend {
+    background:white;
+    padding:12px 20px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    font-size:14px;
+    margin-bottom:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.legend-item {
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.dot {
+    width:12px;
+    height:12px;
+    border-radius:50%;
+} */
+.main-content {
+  /* flex: 1; */
+  /* padding: 20px 20px; */
+  display: flex;
+  gap: 15px;
+  flex-direction: row-reverse;
+}
+/* CALENDAR GRID */
+.calendar {
+  background:white;
+  border-radius:0 0 8px 8px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.weekdays {
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  background:#f8f9fa;
+  font-weight:bold;
+  color:#555;
+}
+.weekdays div {
+  padding:15px;
+  text-align:center;
+  border-right:1px solid #eee;
+}
+.days {
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  min-height:520px;
+}
+.day {
+  border-right:1px solid #eee;
+  border-bottom:1px solid #eee;
+  padding:8px;
+  min-height:100px;
+  background:#fff;
+  position:relative;
+}
+.day.other-month {
+  color:#bbb;
+  background:#fafafa;
+}
+.day-number {
+  font-weight:600;
+  margin-bottom:5px;
+}
+.event {
+  font-size:11px;
+  color:white;
+  padding:3px 6px;
+  border-radius:4px;
+  margin-top:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+/* ==================== LỊCH NHỎ BÊN TRÁI ==================== */
+.mini-calendar {
+  width: 340px;
+  /* background: white; */
+  border-radius: 4px;
+  /* padding: 15px; */
+  /* margin: 15px; */
+  box-shadow: var(--shadow);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-event-btn {
+  margin-left: auto;
+  width: 40px; height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-cal-header {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-cal-header button{
+  border: 1px solid #C7CDD1;
+  background: #FFFFFF;
+  border-radius: 8px;
+  cursor: pointer;
+  /* padding: 10px 10px; */
+}
+
+.mini-cal-header button:hover{
+  background-color: #bcbcbc;
+  color: rgb(255, 255, 255);
+}
+
+.mini-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.mini-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+.mini-day {
+  padding: 12px 0;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.mini-day:hover { background: #f0f2f5; }
+.mini-day.other-month { color: #bbb; }
+.mini-day.today { background: var(--primary); color: white; font-weight: bold; }
+.mini-day.has-event::after {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  background: #dc3545;
+  border-radius: 50%;
+  margin: 4px auto 0;
+}
+
+/* Legend trong lịch nhỏ */
+.legend-box {
+  /* margin-top: 30px; */
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background-color: white;
+  border-radius: 15px;
+}
+.legend-title {
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.legend-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+
+.no-event {
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  /* margin: 20px 0; */
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+}
+.source-btn {
+  /* width: 100%; */
+  border: none;
+  padding: 20px;
+  border-radius: 15px;
+  /* cursor: pointer; */
+  font-size: 14px;
+  background-color: white;
+  color: #00A3E0;
+
+  outline: none;
+}
+
+
+.mini1{
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* 3cai */
+
+
+
+
+/* ==================== LỊCH LỚN BÊN PHẢI ==================== */
+.content {
+  flex: 1;
+  border-radius: 15px;
+}
+.cal-header {
+  background: white;
+  padding: 20px 24px;
+  /* border-radius: 16px 16px 0 0; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  margin-bottom: 1px;
+}
+.cal-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary);
+  align-items: center;
+  text-align: center;
+}
+.cal-nav button {
+  padding: 10px 20px;
+  border: none;
+  background: #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cal-nav button:hover { background: #d1d5db; }
+
+.legend {
+  background: white;
+  padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+}
+
+.calendar {
+  background: white;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f8f9fa;
+  font-weight: bold;
+  text-align: center;
+  padding: 16px 0;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+.day {
+  background: white;
+  min-height: 120px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.day.other-month {
+  background: #fafafa;
+  color: #bbb;
+}
+.day-number {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.event {
+  font-size: 12px;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* responsive */
+/* ================================================
+   RESPONSIVE – TỐI ƯU CHO TẤT CẢ THIẾT BỊ
+   Từ Desktop → Tablet → Mobile (320px)
+   ================================================ */
+
+/* 1. Tablet lớn & Desktop nhỏ (≤ 1200px) */
+@media (max-width: 1200px) {
+  .main-content {
+    gap: 20px;
+  }
+  .mini-calendar {
+    width: 320px;
+  }
+  .cal-title {
+    font-size: 20px;
+  }
+}
+
+/* 2. Tablet (≤ 992px) – Bắt đầu thu gọn */
+@media (max-width: 992px) {
+  .cal-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .cal-header-button,
+  .cal-nav {
+    justify-content: center;
+  }
+
+  .cal-nav {
+    order: -1; /* Đưa nút Tháng/Tuần lên trên cùng */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .cal-nav button {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+
+  .mini-calendar {
+    width: 300px;
+  }
+
+  .legend-item span {
+    font-size: 13px;
+  }
+}
+
+/* 3. Mobile lớn (≤ 768px) – Chuyển sang dọc */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;        /* Lịch nhỏ lên trên, lịch lớn xuống dưới */
+    gap: 20px;
+  }
+
+  .mini-calendar {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Lịch lớn chiếm full width */
+  .content > .calendar {
+    border-radius: 12px;
+  }
+
+  /* Header điều hướng gọn lại */
+  .cal-header-button {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .cal-header-button button,
+  .cal-header-button .cal-title {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .cal-title {
+    font-size: 18px !important;
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 4. Mobile nhỏ (≤ 576px) – Tối ưu cho iPhone, Android nhỏ */
+@media (max-width: 576px) {
+  .cal-header {
+    padding: 12px;
+  }
+
+  .cal-nav {
+    gap: 8px;
+  }
+
+  .cal-nav button {
+    padding: 8px 10px;
+    font-size: 13px;
+    flex: 1;
+  }
+
+  .cal-header-button {
+    gap: 8px;
+  }
+
+  .cal-header-button button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .cal-title {
+    font-size: 17px !important;
+  }
+
+  /* Lịch nhỏ gọn hơn */
+  .mini-cal-header {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .mini-day {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  /* Legend và nút dưới cùng gọn lại */
+  .legend-box,
+  .no-event,
+  .source-btn {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .source-btn {
+    padding: 16px;
+  }
+
+  /* Ẩn bớt chữ dài trong legend nếu cần */
+  .legend-item span {
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+}
+
+/* 5. Mobile siêu nhỏ (≤ 380px) – iPhone SE, cũ */
+@media (max-width: 380px) {
+  .cal-nav button {
+    font-size: 12px;
+    padding: 8px 6px;
+  }
+
+  .cal-header-button button {
+    font-size: 13px;
+    padding: 8px 8px;
+  }
+
+  .cal-title {
+    font-size: 16px !important;
+  }
+
+  .mini-weekdays > div,
+  .mini-day {
+    font-size: 11px;
+  }
+}
+
+/* Bonus: Cải thiện trải nghiệm cuộn trên mobile */
+@media (max-width: 768px) {
+  .days {
+    min-height: auto;
+  }
+  .day {
+    min-height: 90px;
+    padding: 8px;
+  }
+  .event {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lịch học - TNU E-Learning</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="calendar_style.css">  
+  <link rel="stylesheet" href="db_assigment_style.css">
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="sidebar-brand">TNU E - LEARNING</h1>
+      <img src="assests/images/avt.jpg" alt="User Avatar" class="user-avatar">
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="#">
+            <span class="nav-icon">🏠︎︎</span>
+            <span>Bảng Điều Khiển</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="#">
+            <span class="nav-icon">📚</span>
+            <span>Khóa Học</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">📊</span>
+            <span>Lịch</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+    <div class="main-wrapper">
+        <header class="page-header">
+        <img src="assests/logotaynguyen.webp" alt="Header graphic 1" class="header-img-1">
+        <img src="assests/logo2.jpg" alt="Header graphic 2" class="header-img-2">
+        </header>
+
+        <!-- CONTENT – giữ nguyên cấu trúc -->
+        <section class="content">
+            <div class="cal-header">
+              <div class="cal-header-button">
+                <button>Hôm nay</button>
+                <button>&larr;</button>
+                <div class="cal-title">Tháng 11 2025</div>
+                <button>&rarr;</button>
+              </div>
+              <div class="cal-nav">
+                  <button>Tháng</button>
+                  <button>Tuần</button>
+                  <button>Chương trình nghị sự</button>
+                  <button>+</button>
+              </div>
+            </div>
+
+
+            <!-- NỘI DUNG CHÍNH: LỊCH NHỎ + LỊCH LỚN -->
+          <div class="main-content">
+
+            <!-- LỊCH NHỎ BÊN TRÁI -->
+            <div class="mini-calendar">
+              <div class="mini1">
+              <div class="mini-cal-header">
+                <button>&larr;</button>
+                Tháng 11 2025
+                <button>&rarr;</button>
+              </div>
+
+              <div class="mini-weekdays">
+                <div>CN</div><div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div>
+              </div>
+              <div class="mini-days">
+                  <!-- Tháng 11/2025 -->
+                <div class="mini-day other-month">26</div>
+                <div class="mini-day other-month">27</div>
+                <div class="mini-day other-month">28</div>
+                <div class="mini-day other-month">29</div>
+                <div class="mini-day other-month">30</div>
+                <div class="mini-day other-month">31</div>
+                <div class="mini-day">1</div>
+
+                <div class="mini-day has-event">2</div>
+                <div class="mini-day">3</div>
+                <div class="mini-day">4</div>
+                <div class="mini-day">5</div>
+                <div class="mini-day">6</div>
+                <div class="mini-day">7</div>
+                <div class="mini-day">8</div>
+
+                <div class="mini-day">9</div>
+                <div class="mini-day">10</div>
+                <div class="mini-day">11</div>
+                <div class="mini-day">12</div>
+                <div class="mini-day">13</div>
+                <div class="mini-day">14</div>
+                <div class="mini-day">15</div>
+
+                <div class="mini-day">16</div>
+                <div class="mini-day">17</div>
+                <div class="mini-day">18</div>
+                <div class="mini-day">19</div>
+                <div class="mini-day">20</div>
+                <div class="mini-day">21</div>
+                <div class="mini-day">22</div>
+
+                <div class="mini-day">23</div>
+                <div class="mini-day">24</div>
+                <div class="mini-day">25</div>
+                <div class="mini-day">26</div>
+                <div class="mini-day">27</div>
+                <div class="mini-day">28</div>
+                <div class="mini-day">29</div>
+
+                <div class="mini-day">30</div>
+                <div class="mini-day other-month">1</div>
+                <div class="mini-day other-month">2</div>
+                <div class="mini-day other-month">3</div>
+                <div class="mini-day other-month">4</div>
+                <div class="mini-day other-month">5</div>
+                <div class="mini-day other-month">6</div>
+              </div>
+              </div>
+              <div class="legend-box">
+                <div class="legend-title">LỊCH</div>
+                <div class="legend-list">
+                <div class="legend-item"><div class="legend-dot" style="background:#6f42c1;"></div><span>Sinh Viên</span></div>
+                <div class="legend-item"><div class="legend-dot" style="background:#8e44ad;"></div><span>CNTTK23-THIẾT KẾ - LẬP TRÌNH WEB NG</span></div>
+                <div class="legend-item"><div class="legend-dot" style="background:#dc3545;"></div><span>ONTTK23-English for IT</span></div>
+                <div class="legend-item"><div class="legend-dot" style="background:#28a745;"></div><span>Discussion - Emerging Technology 4</span></div>
+                </div>
+              </div>
+
+              <div class="no-event">KHÔNG GHI NGÀY/THÁNG</div>
+                <button class="source-btn">Nguồn Cập Dự Liệu Lịch</button>
+              </div>
+
+        <!-- LỊCH LỚN BÊN PHẢI -->
+            <section class="content">
+                <section class="calendar">
+                    <div class="weekdays">
+                        <div>CN</div><div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div>
+                    </div>
+                <div class="days">
+                    <div class="day other-month"><div class="day-number">27</div></div>
+                    <div class="day other-month"><div class="day-number">28</div></div>
+                    <div class="day other-month"><div class="day-number">29</div></div>
+                    <div class="day other-month"><div class="day-number">30</div></div>
+                    <div class="day other-month"><div class="day-number">31</div></div>
+                    <div class="day"><div class="day-number">1</div></div>
+                    <div class="day"><div class="day-number">2</div>
+                    <div class="event" style="background:#e83e8c;">Thảo luận - Emerging Tech</div>
+                    </div>
+                    <!-- Các ngày còn lại... -->
+                    <div class="day"><div class="day-number">3</div></div>
+                    <div class="day"><div class="day-number">4</div></div>
+                    <div class="day"><div class="day-number">5</div></div>
+                    <div class="day"><div class="day-number">6</div></div>
+                    <div class="day"><div class="day-number">7</div></div>
+                    <div class="day"><div class="day-number">8</div></div>
+                    <div class="day"><div class="day-number">9</div></div>
+                    <div class="day"><div class="day-number">10</div></div>
+                    <div class="day"><div class="day-number">11</div></div>
+                    <div class="day"><div class="day-number">12</div></div>
+                    <div class="day"><div class="day-number">13</div></div>
+                    <div class="day"><div class="day-number">14</div></div>
+                    <div class="day"><div class="day-number">15</div></div>
+                    <div class="day"><div class="day-number">16</div></div>
+                    <div class="day"><div class="day-number">17</div></div>
+                    <div class="day"><div class="day-number">18</div></div>
+                    <div class="day"><div class="day-number">19</div></div>
+                    <div class="day"><div class="day-number">20</div></div>
+                    <div class="day"><div class="day-number">21</div></div>
+                    <div class="day"><div class="day-number">22</div></div>
+                    <div class="day"><div class="day-number">23</div></div>
+                    <div class="day"><div class="day-number">24</div></div>
+                    <div class="day"><div class="day-number">25</div></div>
+                    <div class="day"><div class="day-number">26</div></div>
+                    <div class="day"><div class="day-number">27</div></div>
+                    <div class="day"><div class="day-number">28</div></div>
+                    <div class="day"><div class="day-number">29</div></div>
+                    <div class="day"><div class="day-number">30</div></div>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    </section>
+
+
+    <footer class="page-footer">
+      <nav class="footer-nav">
+        <a href="#">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="#">Terms of Use</a>
+        <span class="separator">|</span>
+        <a href="#">Copyright Procedures</a>
+        <span class="separator">|</span>
+        <span>ID 123</span>
+      </nav>
+    </footer>
+  </div>
+</div>
+<script>
+    // Hamburger menu cho mobile
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('sidebar-open');
+    });
+</script>
+
+</body>
+</html>

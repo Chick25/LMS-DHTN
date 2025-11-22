@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNU E-Learning | Bảng Điều Khiển</title>
+    <link rel="stylesheet" href="db_assigment_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="page-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="sidebar-brand">TNU E - LEARNING</h1>
+      <img src="assests/images/avt.jpg" alt="User Avatar" class="user-avatar">
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="#">
+            <span class="nav-icon">🏠︎︎</span>
+            <span>Bảng Điều Khiển</span>
+          </a>
+        </li>
+        <li class="active">
+          <a href="#">
+            <span class="nav-icon">📚</span>
+            <span>Khóa Học</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="nav-icon">📊</span>
+            <span>Lịch</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main-wrapper">
+    <header class="page-header">
+      <img src="assests/logotaynguyen.webp" alt="Header graphic 1" class="header-img-1">
+      <img src="assests/logo2.jpg" alt="Header graphic 2" class="header-img-2">
+    </header>
+
+    <main class="main-content">
+      <div class="content-controls">
+        <p class="breadcrumbs">
+          <a href="#">THIẾT CNTTK23</a>
+          <span> > Bài Tập</span>
+        </p>
+        <div class="actions-group">
+          <form class="search-form">
+            <img src="assests/icons/search.png" alt="Search" class="search-icon">
+            <input type="text" placeholder="Đang tìm kiếm..." class="search-input">
+          </form>
+          <div class="filter-buttons">
+            <button class="btn btn-primary">HIỂN THỊ THEO NGÀY</button>
+            <button class="btn btn-secondary">HIỂN THỊ THEO LOẠI</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="assignments-container">
+        <div class="assignment-group">
+          <div class="assignment-group-header">
+            <img src="${ASSET_PATH}/b070b94075ab6782a468444a9bc465ec017d625e.png" alt="" class="group-header-icon">
+            <h3>Bài Tập Quá Hạn</h3>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Thiết kế & chuẩn bị</p>
+              <p class="assignment-meta">Đến hạn Th09 5 tại 23:59 | +/–10 các điểm thành phần</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="assignment-group">
+          <div class="assignment-group-header">
+            <img src="${ASSET_PATH}/b070b94075ab6782a468444a9bc465ec017d625e.png" alt="" class="group-header-icon">
+            <h3>Bài Tập Đã Qua</h3>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Quản lý dự án với Jira</p>
+              <p class="assignment-meta">Đến hạn Th09 23 tại 23:59 | +/–10 các điểm thành phần | Chưa Được Chấm Điểm</p>
+            </div>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Sprint planning - Sprint Backlog</p>
+              <p class="assignment-meta">Đến hạn Th08 20 tại 23:59</p>
+            </div>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Teamwork</p>
+              <p class="assignment-meta">Đến hạn Th08 8 tại 23:59 | +/–10 các điểm thành phần | Chưa Được Chấm Điểm</p>
+            </div>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Xây dựng Product Backlog</p>
+              <p class="assignment-meta">Đến hạn Th08 8 tại 23:59 | +/–10 các điểm thành phần</p>
+            </div>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Tạo ứng dụng web với AI tool</p>
+              <p class="assignment-meta">Đến hạn Th08 6 tại 17:30 | +/–10 các điểm thành phần | Chưa Được Chấm Điểm</p>
+            </div>
+          </div>
+          <div class="assignment-item">
+            <div class="assignment-icon"></div>
+            <div class="assignment-details">
+              <p class="assignment-title">Tạo giao diện trang web bằng AI tool</p>
+              <p class="assignment-meta">Đến hạn Th08 4 tại 17:30 | +/–10 các điểm thành phần | Chưa Được Chấm Điểm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <nav class="footer-nav">
+        <a href="#">Privacy Policy</a>
+        <span class="separator">|</span>
+        <a href="#">Terms of Use</a>
+        <span class="separator">|</span>
+        <a href="#">Copyright Procedures</a>
+        <span class="separator">|</span>
+        <span>ID 123</span>
+      </nav>
+    </footer>
+  </div>
+</div>
+<script>
+    // Hamburger menu cho mobile
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('sidebar-open');
+    });
+</script>
+
+</body>
+</html>
