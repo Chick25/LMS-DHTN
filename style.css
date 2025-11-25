@@ -628,11 +628,13 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
     height: 60px;
   }
   .header-actions {
+    .header-actions {
     display: flex;
     align-items: center;
     justify-content: flex-start !important; /* Bắt buộc căn trái */
     width: auto !important;                 /* Không chiếm 100% */
     margin-top: 0 !important;               /* Loại bỏ margin-top gây lệch */
+}
   }
   .training-cta {
     font-size: 24px;
@@ -709,11 +711,12 @@ margin-left: auto;     /* ĐẨY VỀ BÊN PHẢI */
   /* Header-bottom căn chỉnh language + hamburger trên 1 hàng */
   .header-bottom-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Đẩy 2 phần sang hai bên */
     align-items: center;
+    flex-wrap: nowrap;              /* Không cho xuống hàng */
     width: 100%;
     padding: 0 20px;
-  }
+}
 
   /* Language select bên trái */
   .header-actions {
