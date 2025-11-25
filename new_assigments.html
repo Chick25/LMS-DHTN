@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNU E-Learning | Bảng Điều Khiển</title>
+    <link rel="stylesheet" href="db_new_assigment_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="wrapper">
+  <aside class="sidebar" id="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__avatar" id="userAvatar"></div>
+            <h1 class="sidebar__title">TNU E-LEARNING</h1>
+        </div>
+        <nav class="sidebar__nav">
+            <a href="#" class="nav-item ">
+                <span class="nav-item__text">Bảng Điều Khiển</span>
+            </a>
+            <a href="#" class="nav-item nav-item--active">
+                <span class="nav-item__text">Khóa Học</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <span class="nav-item__text">Lịch</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="overlay"></div>
+
+  <div class="main-wrapper">
+    <header class="header">
+            <button class="hamburger" id="hamburger" aria-label="Mở menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header__branding">
+                <img src="assests/logotaynguyen.webp" alt="Logo trường" width="129" height="129">
+                <img src="assests/logo2.jpg" alt="Tên trường" width="432" height="129">
+            </div>
+    </header>
+
+    <main class="main-content">
+      <div class="content-controls">
+        <div class="actions-group">
+          <form class="search-form">
+            <img src="assests/icons/search.png" alt="Search" class="search-icon">
+            <input type="text" placeholder="Đang tìm kiếm..." class="search-input">
+          </form>
+          <div class="filter-buttons">
+            <button class="btn btn-primary">HIỂN THỊ THEO NGÀY</button>
+            <button class="btn btn-secondary">HIỂN THỊ THEO LOẠI</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="assignments-container">
+        <!-- PHẦN 1: BÀI TẬP QUÁ HẠN -->
+        <div class="assignment-section">
+          <div class="section-header overdue" data-target="overdue">
+            <div class="section-header-left">
+              <span class="toggle-icon">▼</span>
+              <h3>Bài Tập Quá Hạn</h3>
+              <span class="badge badge-overdue">1</span>
+            </div>
+            <span class="section-count">1 bài tập</span>
+          </div>
+          <div class="section-content" id="overdue">
+            <div class="assignment-item">
+              <div class="assignment-icon overdue"></div>
+              <div class="assignment-details">
+                <p class="assignment-title">Thiết kế & chuẩn bị</p>
+                <p class="assignment-meta">Đến hạn Th09 5 tại 23:59 | +/–10 các điểm thành phần</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHẦN 2: BÀI TẬP ĐÃ QUA -->
+        <div class="assignment-section">
+          <div class="section-header past" data-target="past">
+            <div class="section-header-left">
+              <span class="toggle-icon">▼</span>
+              <h3>Bài Tập Đã Qua</h3>
+              <span class="badge badge-past">6</span>
+            </div>
+            <span class="section-count">6 bài tập</span>
+          </div>
+          <div class="section-content" id="past">
+            <!-- Các bài tập cũ ở đây -->
+            <div class="assignment-item">
+              <div class="assignment-icon"></div>
+              <div class="assignment-details">
+                <p class="assignment-title">Quản lý dự án với Jira</p>
+                <p class="assignment-meta">Đến hạn Th09 23 tại 23:59 | Chưa Được Chấm Điểm</p>
+              </div>
+            </div>
+            <div class="assignment-item">
+              <div class="assignment-icon"></div>
+              <div class="assignment-details">
+                <p class="assignment-title">Sprint planning - Sprint Backlog</p>
+                <p class="assignment-meta">Đến hạn Th08 20 tại 23:59</p>
+              </div>
+            </div>
+            <!-- Thêm các bài khác tương tự... -->
+            <div class="assignment-item">
+              <div class="assignment-icon"></div>
+              <div class="assignment-details">
+                <p class="assignment-title">Tạo giao diện trang web bằng AI tool</p>
+                <p class="assignment-meta">Đến hạn Th08 4 tại 17:30 | Chưa Được Chấm Điểm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+            <nav class="footer__nav">
+                <a href="#">Privacy Policy</a><span>|</span>
+                <a href="#">Terms of Use</a><span>|</span>
+                <a href="#">Copyright</a><span>|</span>
+                <span class="footer__id">ID 123</span>
+            </nav>
+        </footer>
+  </div>
+</div>
+<script>
+    // Hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('sidebar-open');
+    });
+
+    // Accordion - ĐÃ TỐI ƯU CHO MOBILE
+    document.querySelectorAll('.section-header').forEach(header => {
+        header.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+            const isCurrentlyActive = this.classList.contains('active');
+
+            // 1. Đóng tất cả các section khác
+            document.querySelectorAll('.section-header').forEach(otherHeader => {
+                if (otherHeader !== this) {
+                    otherHeader.classList.remove('active');
+                    const otherContent = document.getElementById(otherHeader.getAttribute('data-target'));
+                    if (otherContent) otherContent.classList.add('collapsed');
+                }
+            });
+
+            // 2. Toggle section hiện tại
+            if (isCurrentlyActive) {
+                // Nếu đang mở → đóng lại
+                this.classList.remove('active');
+                content.classList.add('collapsed');
+            } else {
+                // Nếu đang đóng → mở ra
+                this.classList.add('active');
+                content.classList.remove('collapsed');
+
+                // QUAN TRỌNG CHO MOBILE: Cuộn nhẹ xuống để thấy nội dung vừa mở (tránh bị che bởi header cố định)
+                setTimeout(() => {
+                    const headerRect = this.getBoundingClientRect();
+                    const headerBottom = headerRect.bottom + window.scrollY;
+                    const viewportHeight = window.innerHeight;
+
+                    if (headerBottom > window.scrollY + 100) { // nếu header đang ở ngoài tầm nhìn
+                        window.scrollTo({
+                            top: headerBottom - 120, // cách header một chút
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100);
+            }
+        });
+    });
+
+    // Mở sẵn phần "Bài Tập Đã Qua" khi load trang (vẫn giữ như cũ)
+    document.addEventListener('DOMContentLoaded', () => {
+        const pastHeader = document.querySelector('[data-target="past"]');
+        if (pastHeader && !pastHeader.classList.contains('active')) {
+            pastHeader.click(); // tự động mở + cuộn mượt
+        }
+    });
+</script>
+
+</body>
+</html>
