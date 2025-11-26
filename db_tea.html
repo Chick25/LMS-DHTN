@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNU E-Learning | Bảng Điều Khiển</title>
+    <link rel="stylesheet" href="db_tea_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar trái -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__avatar"></div>
+            <h1 class="sidebar__title">TNU E-LEARNING</h1>
+        </div>
+        <nav class="sidebar__nav">
+            <a href="#" class="nav-item nav-item--active">
+                <span class="nav-item__text">Bảng Điều Khiển</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-item__text">Khóa Học</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-item__text">Lịch</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Overlay (dùng cho mobile sidebar) -->
+    <div class="overlay"></div>
+
+    <!-- Nội dung chính -->
+    <div class="main-content">
+        <header class="header">
+            <button class="hamburger" id="hamburger" aria-label="Mở menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header__branding">
+                <img src="assests/logotaynguyen.webp" alt="Logo trường" width="129" height="129">
+                <img src="assests/logo2.jpg" alt="Tên trường" width="432" height="129">
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Phần chính giữa: tiêu đề + khóa học --> <!-- Mẫu -->
+            <div class="dashboard-center">
+                <h2 class="dashboard__title">Bảng Điều Khiển</h2>
+
+                <div class="courses-grid">
+                    <article class="course-card">
+                        <a href="#" class="course-card__link">
+                            <div class="course-card__banner" 
+                                style="background-image: url('https://images.unsplash.com/photo-1581287056112-34f31c0e2c53?w=800&q=80');">
+                            </div>
+                            <button class="course-card__change-banner">Đổi ảnh</button>
+                            <h4 class="course-card__title">Web Design Nâng Cao</h4>
+                            <p class="course-card_class_infor">CNTT K23</p>
+                        </a>
+                    </article>
+
+                    <article class="course-card">
+                        <a href="#" class="course-card__link">
+                            <div class="course-card__banner" 
+                                style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80');">
+                            </div>
+                            <button class="course-card__change-banner">Đổi ảnh</button>
+                            <h4 class="course-card__title">Lập Trình Frontend</h4>
+                            <p class="course-card_class_infor">CNTT K23</p>
+                        </a>
+                    </article>
+
+                    <article class="course-card">
+                        <a href="#" class="course-card__link">
+                            <div class="course-card__banner" 
+                                style="background-image: url('https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?w=800&q=80');">
+                            </div>
+                            <button class="course-card__change-banner">Đổi ảnh</button>
+                            <h4 class="course-card__title">Lập Trình Backend</h4>
+                            <p class="course-card_class_infor">CNTT K23</p>
+                        </a>
+                    </article>
+
+                    <article class="course-card">
+                        <a href="#" class="course-card__link">
+                            <div class="course-card__banner" 
+                                style="background-image: url('https://images.unsplash.com/photo-1526379094088-c2d28f92b7f9?w=800&q=80');">
+                            </div>
+                            <button class="course-card__change-banner">Đổi ảnh</button>
+                            <h4 class="course-card__title">Thiết Kế Cơ Sở Dữ Liệu</h4>
+                            <p class="course-card_class_infor">CNTT K23</p>
+                        </a>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar phải -->  <!--  Chỗ này cx import dữ liệu  -->
+            <aside class="sidebar-right">
+                <section class="widget widget--assignments">
+                    <h3 class="widget__title">Bài Tập Sắp Tới</h3>
+                    <ul class="assignments-list">
+                        <li class="assignment"><strong>Bài Tập Lập Trình Web</strong><p>Lớp: CNTT-K23</p><time class="due due--dang">Sắp hết hạn: 2 ngày</time></li>
+                        <li class="assignment"><strong>Project Frontend React</strong><p>Lớp: CNTT-K23</p><time class="due due--danger">Hạn: 5 ngày</time></li>
+                        <li class="assignment"><strong>Báo Cáo Backend</strong><p>Lớp: CNTT-K23</p><time class="due due--danger">Hạn 7 ngày</time></li>
+                        <li class="assignment"><strong>Quiz Database Quiz</strong><p>Lớp: CNTT-K23</p><time class="due due--danger">Hạn 10 ngày</time></li>
+                    </ul>
+                </section>
+
+                <div class="actions-panel">
+                    <button class="action-btn btn-open-create">Tạo Khóa Học Mới</button>
+                    <button class="action-btn" id="btnViewGrade">Xem Điểm</button>
+                </div>
+
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <nav class="footer__nav">
+                <a href="#">Privacy Policy</a><span>|</span>
+                <a href="#">Terms of Use</a><span>|</span>
+                <a href="#">Copyright</a><span>|</span>
+                <span class="footer__id">ID 123</span>
+            </nav>
+        </footer>
+    </div>
+</div>
+
+<div class="modal-overlay" id="createCourseModal">
+    <div class="modal-box">
+        <h2 class="modal-title">TẠO KHÓA HỌC</h2>
+
+        <label class="modal-label">Ảnh bìa khóa học</label>
+        <div class="image-upload-wrapper">
+            <input type="file" id="courseBanner" accept="image/*" style="display:none;">
+            <div class="image-preview" id="imagePreview">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Preview" id="previewImg">
+                <div class="upload-placeholder">Click để chọn ảnh bìa</div>
+            </div>
+            <button type="button" class="change-image-btn">Chọn ảnh khác</button>
+        </div>
+
+        <label for="courseName" class="modal-label">Tên Khóa Học</label>
+        <input type="text" id="courseName" class="modal-input" placeholder="Nhập tên khóa học...">
+
+        <label for="courseClass" class="modal-label">Lớp</label>
+        <input type="text" id="courseClass" class="modal-input" placeholder="Nhập tên lớp...">
+
+        <div class="modal-actions">
+            <button class="modal-btn cancel" id="cancelCreate">Hủy</button>
+            <button class="modal-btn create" id="createCourseBtn">Tạo</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Hamburger menu cho mobile
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('sidebar-open');
+    });
+
+    //////////////////////////////////////////////////////////
+    /*                       Tạo Khóa Học                          */
+
+
+    const modal = document.getElementById("createCourseModal");
+    const openBtn = document.querySelector(".btn-open-create");
+    const cancelBtn = document.getElementById("cancelCreate");
+    const createBtn = document.getElementById("createCourseBtn");
+    const inputName = document.getElementById("courseName");
+    const inputClass = document.getElementById("courseClass");
+    const fileInput = document.getElementById("courseBanner");
+    const previewImg = document.getElementById("previewImg");
+    const imagePreview = document.getElementById("imagePreview");
+    const changeBtn = document.querySelector(".change-image-btn");
+    const courseGrid = document.querySelector(".courses-grid");
+
+    let currentBannerUrl = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80"; // mặc định
+
+    // Mở modal
+    openBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+        inputName.value = "";
+        inputClass.value = "";
+        // Reset ảnh về mặc định
+        previewImg.src = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80";
+        currentBannerUrl = previewImg.src;
+        inputName.focus();
+    });
+
+    // Click để chọn ảnh
+    imagePreview.addEventListener("click", () => fileInput.click());
+    changeBtn.addEventListener("click", () => fileInput.click());
+
+    // Khi chọn ảnh mới
+    fileInput.addEventListener("change", function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewImg.src = e.target.result;
+                currentBannerUrl = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Tạo khóa học
+    createBtn.addEventListener("click", () => {
+        const name = inputName.value.trim();
+        const className = inputClass.value.trim();
+
+        if (!name) return alert("Vui lòng nhập tên khóa học!");
+        if (!className) return alert("Vui lòng nhập tên lớp!");
+
+        const card = document.createElement("article");
+        card.classList.add("course-card");
+
+        card.innerHTML = `
+            <a href="#" class="course-card__link">
+                <div class="course-card__banner" style="background-image: url('${currentBannerUrl}');"></div>
+                <button class="course-card__change-banner">Đổi ảnh</button>
+                <h4 class="course-card__title">${name}</h4>
+                <p class="course-card_class_infor">${className}</p>
+            </a>
+        `;
+
+        courseGrid.appendChild(card);
+        modal.style.display = "none";
+
+        // Gắn sự kiện đổi ảnh cho card vừa tạo
+        const changeBannerBtn = card.querySelector(".course-card__change-banner");
+        changeBannerBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const newFileInput = document.createElement("input");
+            newFileInput.type = "file";
+            newFileInput.accept = "image/*";
+            newFileInput.onchange = function() {
+                if (this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        const bannerDiv = card.querySelector(".course-card__banner");
+                        bannerDiv.style.backgroundImage = `url('${ev.target.result}')`;
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            };
+            newFileInput.click();
+        });
+    });
+
+    // Đóng modal khi click ngoài
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.style.display = "none";
+    });
+
+    cancelBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    ////////////////// nút xem điểm /////////////////////////////
+    document.getElementById("btnViewGrade").addEventListener("click", () => {
+        window.location.href = "db_grade_tea.html"; 
+    });
+    ///////////////////////////////////////////////////////////////
+
+    
+</script>
+
+
+</body>
+</html>
