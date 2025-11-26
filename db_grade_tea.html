@@ -1,0 +1,180 @@
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TNU E-Learning | Bảng Điều Khiển</title>
+        <link rel="stylesheet" href="db_tea_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+
+    <div class="wrapper">
+
+        <!-- Sidebar trái -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__header">
+                <div class="sidebar__avatar"></div>
+                <h1 class="sidebar__title">TNU E-LEARNING</h1>
+            </div>
+            <nav class="sidebar__nav">
+                <a href="#" class="nav-item nav-item--active">
+                    <span class="nav-item__text">Bảng Điều Khiển</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item__text">Khóa Học</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-item__text">Lịch</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Overlay (dùng cho mobile sidebar) -->
+        <div class="overlay"></div>
+
+        <!-- Nội dung chính -->
+        <div class="main-content">
+            <header class="header">
+                <button class="hamburger" id="hamburger" aria-label="Mở menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header__branding">
+                    <img src="assests/logotaynguyen.webp" alt="Logo trường" width="129" height="129">
+                    <img src="assests/logo2.jpg" alt="Tên trường" width="432" height="129">
+                </div>
+            </header>
+
+            <main class="dashboard">
+                <div class="dashboar-center">
+                    <div class="grade-wrapper">
+                    <h2 class="grade-title">Điểm</h2>
+
+                    <ul class="grade-list">
+
+                        <li class="grade-row">
+                            <a href="#" class="course-name">Tin học đại cương 2 - Quản lý NN</a>
+                            <span class="course-grade no-grade">no grades</span>
+                        </li>
+
+                        <li class="grade-row">
+                            <a href="#" class="course-name">KHÓA LUẬN - CHUYÊN ĐỀ TỐT NGHIỆP NĂM 2025</a>
+                            <span class="course-grade no-grade">no grades</span>
+                        </li>
+
+                        <li class="grade-row">
+                            <div>
+                                <a href="#" class="course-name">CNTTK23 - English for IT</a>
+                                <p class="sub">average for 70 students</p>
+                            </div>
+                            <div class="right">
+                                <span class="course-grade has-grade">79.81%</span>
+                                <a href="#" class="report">Student Interactions Report</a>
+                            </div>
+                        </li>
+
+                        <li class="grade-row">
+                            <a href="#" class="course-name">ỨNG DỤNG AI ĐỂ TỰ HỌC VÀ CÁ NHÂN HÓA HỌC TẬP</a>
+                            <span class="course-grade no-grade">no grades</span>
+                        </li>
+
+                        <li class="grade-row">
+                            <div>
+                                <a href="#" class="course-name">CNTTK25 - NHẬP MÔN NGÀNH CNTT</a>
+                                <p class="sub">average for 83 students</p>
+                            </div>
+                            <div class="right">
+                                <span class="course-grade has-grade">82.12%</span>
+                                <a href="#" class="report">Student Interactions Report</a>
+                            </div>
+                        </li>
+
+                        <li class="grade-row">
+                            <a href="#" class="course-name">CNTTK23 - THIẾT KẾ - LẬP TRÌNH WEB NC</a>
+                            <span class="course-grade no-grade">no grades</span>
+                        </li>
+
+                        <li class="grade-row">
+                            <div>
+                                <a href="#" class="course-name">CNTTK22 - NHỮNG VẤN ĐỀ HIỆN ĐẠI CNTT</a>
+                                <p class="sub">average for 51 students</p>
+                            </div>
+                            <div class="right">
+                                <span class="course-grade has-grade">62.65%</span>
+                                <a href="#" class="report">Student Interactions Report</a>
+                            </div>
+                        </li>
+
+                        <li class="grade-row">
+                            <a href="#" class="course-name">LT GDMNK23 - Tin học Đại cường</a>
+                            <span class="course-grade no-grade">no grades</span>
+                        </li>
+
+                    </ul>
+                </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <nav class="footer__nav">
+                    <a href="#">Privacy Policy</a><span>|</span>
+                    <a href="#">Terms of Use</a><span>|</span>
+                    <a href="#">Copyright</a><span>|</span>
+                    <span class="footer__id">ID 123</span>
+                </nav>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Hamburger menu cho mobile
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.overlay');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.classList.toggle('sidebar-open');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+        });
+        ///////////////////////////////////////
+        const raw = sessionStorage.getItem("appData");
+        const data = raw ? JSON.parse(raw) : { courses: [], assignments: [] };
+
+        // Render danh sách khóa học
+        const grid = document.getElementById("coursesGrid");
+        data.courses.forEach(course => {
+            const card = document.createElement("article");
+            card.className = "course-card";
+            card.innerHTML = `
+                <a href="#" class="course-card__link">
+                    <div class="course-card__banner" style="background-image: url('${course.banner}');"></div>
+                    <button class="course-card__change-banner">Đổi ảnh</button>
+                    <h4 class="course-card__title">${course.name}</h4>
+                    <p class="course-card_class_infor">${course.class}</p>
+                </a>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Render bài tập sắp tới
+        const assignList = document.getElementById("assignmentsList");
+        data.assignments.forEach(a => {
+            const li = document.createElement("li");
+            li.className = "assignment";
+            li.innerHTML = `<strong>${a.title}</strong><p>Lớp: ${a.class}</p><time class="due due--danger">Còn ${a.dueIn} ngày</time>`;
+            assignList.appendChild(li);
+        });
+    </script>
+
+
+
+    </body>
+    </html>
