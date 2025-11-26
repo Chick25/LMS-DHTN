@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNU E-Learning | Bảng Điều Khiển</title>
+    <link rel="stylesheet" href="db_stu_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar trái -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__header">
+            <div class="sidebar__avatar"></div>
+            <h1 class="sidebar__title">TNU E-LEARNING</h1>
+        </div>
+        <nav class="sidebar__nav">
+            <a href="#" class="nav-item nav-item--active">
+                <span class="nav-item__text">Bảng Điều Khiển</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-item__text">Khóa Học</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-item__text">Lịch</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Overlay (dùng cho mobile sidebar) -->
+    <div class="overlay"></div>
+
+    <!-- Nội dung chính -->
+    <div class="main-content">
+        <header class="header">
+            <button class="hamburger" id="hamburger" aria-label="Mở menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header__branding">
+                <img src="assests/logotaynguyen.webp" alt="Logo trường" width="129" height="129">
+                <img src="assests/logo2.jpg" alt="Tên trường" width="432" height="129">
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Phần chính giữa: tiêu đề + khóa học -->
+            <div class="dashboard-center">
+                <h2 class="dashboard__title">Bảng Điều Khiển</h2>
+
+                <div class="courses-grid">
+                    <article class="course-card">
+                        <div class="course-card__banner"></div>
+                        <h4 class="course-card__title">Web Design Nâng Cao</h4>
+                        <p class="course-card__instructor">GV: Nguyễn Văn A</p>
+                    </article>
+                    <article class="course-card">
+                        <div class="course-card__banner"></div>
+                        <h4 class="course-card__title">Lập Trình Frontend</h4>
+                        <p class="course-card__instructor">GV: Trần Thị B</p>
+                    </article>
+                    <article class="course-card">
+                        <div class="course-card__banner"></div>
+                        <h4 class="course-card__title">Lập Trình Backend</h4>
+                        <p class="course-card__instructor">GV: Lê Văn C</p>
+                    </article>
+                    <article class="course-card">
+                        <div class="course-card__banner"></div>
+                        <h4 class="course-card__title">Thiết Kế Cơ Sở Dữ Liệu</h4>
+                        <p class="course-card__instructor">GV: Phạm Thị D</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar phải -->
+            <aside class="sidebar-right">
+                <section class="widget widget--assignments">
+                    <h3 class="widget__title">Bài Tập Sắp Tới</h3>
+                    <ul class="assignments-list">
+                        <li class="assignment"><strong>Bài Tập Lập Trình Web</strong><p>Web Design - GV: Nguyễn Văn A</p><time class="due due--warning">Sắp hết hạn: 2 ngày</time></li>
+                        <li class="assignment"><strong>Project Frontend React</strong><p>Frontend - GV: Trần Thị B</p><time class="due due--danger">Hạn: 5 ngày</time></li>
+                        <li class="assignment"><strong>Báo Cáo Backend</strong><p>Backend - GV: Lê Văn C</p><time class="due due--danger">Hạn 7 ngày</time></li>
+                        <li class="assignment"><strong>Quiz Database Quiz</strong><p>Database - GV: Phạm Thị D</p><time class="due due--danger">Hạn 10 ngày</time></li>
+                    </ul>
+                </section>
+
+                <div class="stats-grid">
+                    <section class="stat-card"><h4 class="stat-card__label">Điểm Trung Bình</h4><data class="stat-card__value">8.5</data></section>
+                    <section class="stat-card"><h4 class="stat-card__label">Khóa Học Đang Học</h4><data class="stat-card__value">5</data></section>
+                    <section class="stat-card"><h4 class="stat-card__label">Bài Tập Chưa Nộp</h4><data class="stat-card__value">3</data></section>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <nav class="footer__nav">
+                <a href="#">Privacy Policy</a><span>|</span>
+                <a href="#">Terms of Use</a><span>|</span>
+                <a href="#">Copyright</a><span>|</span>
+                <span class="footer__id">ID 123</span>
+            </nav>
+        </footer>
+    </div>
+</div>
+
+<script>
+    // Hamburger menu cho mobile
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.overlay');
+
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('sidebar-open');
+    });
+</script>
+
+</body>
+</html>
