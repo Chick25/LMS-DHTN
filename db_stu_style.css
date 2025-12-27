@@ -95,6 +95,7 @@ body {
     width: 100%;
     text-align: left;              /* tiêu đề căn giữa */
     margin-bottom: 40px;
+    margin-top: 25px;
     font-size: 28px;
     font-weight: 700;
 }

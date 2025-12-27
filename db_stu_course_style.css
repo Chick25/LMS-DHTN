@@ -1,0 +1,30 @@
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* 3 cột bằng nhau */
+    gap: 30px;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;                          /* căn giữa toàn bộ grid */
+    justify-content: center;
+}
+
+.dashboard_h1 h1, p{
+    font-size: 42px;
+    text-align: left !important;
+}
+
+.dashboard_h1 {
+    text-align: left !important;   /* Căn trái nội dung bên trong */
+    display: block;                /* Đảm bảo span chiếm full width để alignment hoạt động tốt */
+    width: 100%;                   /* Optional: để chắc chắn */
+}
+
+.dashboard_h1 h1 {
+    margin: 0;                     /* Loại bỏ margin mặc định của h1 nếu cần */
+    text-align: left;
+}
+
+.dashboard_h1 p {
+          /* Điều chỉnh khoảng cách nếu muốn */
+    text-align: left;
+}
