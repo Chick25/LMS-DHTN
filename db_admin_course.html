@@ -56,11 +56,44 @@
                         <h1 class="courses-header__title">Các khóa học của tôi</h1>
                         <p class="courses-header__welcome">Chào mừng quay trở lại, TTN! 🎉</p>
                     </div>
+
+                    <div class="courses-header__actions">
+                        <button class="btn btn--secondary">Quản lý khóa học</button>
+                        <button class="btn btn--primary">+ Khóa học</button>
+                    </div>
                 </div>
-                
-                <div class="courses-divider"></div>
+
+                <!-- <h2 class="dashboard__title">Bảng Điều Khiển</h2> -->
+                 <div class="courses-divider"></div>
+
+                <div class="courses-controls">
+                        <select class="filter-select">
+                            <option>All</option>
+                            <option>Đang học</option>
+                            <option>Hoàn thành</option>
+                            <option>Chưa bắt đầu</option>
+                        </select>
+
+                        <div class="search-bar">
+                            <input type="search" placeholder="Tìm Kiếm" aria-label="Tìm kiếm khóa học">
+                        </div>
+
+                        <select class="filter-select">
+                            <option>Sort by course name</option>
+                            <option>Mới nhất</option>
+                            <option>Cũ nhất</option>
+                            <option>A → Z</option>
+                            <option>Z → A</option>
+                        </select>
+
+                        <select class="view-mode-select">
+                            <option>Card</option>
+                            <option>List</option>
+                        </select>
+                    </div>
 
                 <div class="courses-grid">
+
                     <article class="course-card">
                         <div class="course-card__banner"></div>
                         <h4 class="course-card__title">Web Design Nâng Cao</h4>
